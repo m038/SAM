@@ -1,6 +1,6 @@
 <?php
 
-namespace intrawarez\sabertooth\slim\annotations;
+namespace intrawarez\slim\annotations;
 
 /**
  * 
