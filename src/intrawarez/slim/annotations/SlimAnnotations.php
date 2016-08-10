@@ -2,8 +2,20 @@
 
 namespace intrawarez\slim\annotations;
 
+use Doctrine\Common\Annotations\AnnotationRegistry;
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Annotations\AnnotationException;
+
+
+AnnotationRegistry::registerFile(__DIR__."/Route.php");
+AnnotationRegistry::registerFile(__DIR__."/Middleware.php");
+AnnotationRegistry::registerFile(__DIR__."/Group.php");
+AnnotationRegistry::registerFile(__DIR__."/GET.php");
+AnnotationRegistry::registerFile(__DIR__."/POST.php");
+AnnotationRegistry::registerFile(__DIR__."/PUT.php");
+AnnotationRegistry::registerFile(__DIR__."/DELETE.php");
+AnnotationRegistry::registerFile(__DIR__."/OPTIONS.php");
+AnnotationRegistry::registerFile(__DIR__."/ANY.php");
 
 /**
  * 
@@ -12,11 +24,19 @@ use Doctrine\Common\Annotations\AnnotationException;
  * @author maxmeffert
  *
  */
-abstract class AnnotationInfo {
+abstract class SlimAnnotations {
 	
+	/**
+	 * 
+	 * @var \Doctrine\Common\Annotations\AnnotationReader
+	 */
 	static private $reader;
 	
-	static private function getReader () {
+	/**
+	 * 
+	 * @return \Doctrine\Common\Annotations\AnnotationReader
+	 */
+	static private function getReader () : AnnotationReader {
 		
 		if (is_null(self::$reader)) {
 			
@@ -28,7 +48,12 @@ abstract class AnnotationInfo {
 		
 	}
 	
-	static public function annotationsOf (\Reflector $reflector) {
+	/**
+	 * 
+	 * @param \Reflector $reflector
+	 * @throws AnnotationException
+	 */
+	static public function annotationsOf (\Reflector $reflector) : array {
 		
 		if ($reflector instanceof \ReflectionClass) {
 			
@@ -52,10 +77,17 @@ abstract class AnnotationInfo {
 		
 	}
 	
+	/**
+	 * 
+	 * @param \Reflector $reflector
+	 * @param unknown $annotationName
+	 * @throws AnnotationException
+	 * @return object|null
+	 */
 	static public function annotationOf (\Reflector $reflector, $annotationName) {
 	
 		if ($reflector instanceof \ReflectionClass) {
-				
+			
 			return self::getReader()->getClassAnnotation($reflector, $annotationName);
 				
 		}
@@ -76,19 +108,34 @@ abstract class AnnotationInfo {
 	
 	}
 	
-	static public function routeOf (\Reflector $reflector) {
+	/**
+	 * 
+	 * @param \Reflector $reflector
+	 * @return Route
+	 */
+	static public function routeOf (\Reflector $reflector)  {
 		
 		return self::annotationOf($reflector, Route::class);
 		
 	}
 	
-	static public function methodOf (\Reflector $reflector) {
+	/**
+	 * 
+	 * @param \Reflector $reflector
+	 * @return Method
+	 */
+	static public function methodOf (\Reflector $reflector)  {
 		
 		return self::annotationOf($reflector, Method::class);
 		
 	}
 	
-	static public function middlewaresOf (\Reflector $reflector) {
+	/**
+	 * 
+	 * @param \Reflector $reflector
+	 * @return Middleware
+	 */
+	static public function middlewaresOf (\Reflector $reflector)  {
 		
 		return array_filter(self::annotationsOf($reflector), function($annotation){
 			return $annotation instanceof \intrawarez\sabertooth\slim\annotations\Middleware;

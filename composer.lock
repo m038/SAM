@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a5a3ceea994ddb693b26e3caa23e28df",
+    "hash": "b4c5b1550ce205d641bd29c3f2e8cf57",
     "content-hash": "3cc6bc6e8ba1484164202bbeb78d6a03",
     "packages": [
         {
@@ -274,12 +274,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/IntraWarez/sabertooth.git",
-                "reference": "0a23230086ee1dcfbb038aa45cf5fcbe71bf1846"
+                "reference": "444481a6d0f374fd5ff0387d62a109993bf1228c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/IntraWarez/sabertooth/zipball/0a23230086ee1dcfbb038aa45cf5fcbe71bf1846",
-                "reference": "0a23230086ee1dcfbb038aa45cf5fcbe71bf1846",
+                "url": "https://api.github.com/repos/IntraWarez/sabertooth/zipball/444481a6d0f374fd5ff0387d62a109993bf1228c",
+                "reference": "444481a6d0f374fd5ff0387d62a109993bf1228c",
                 "shasum": ""
             },
             "require": {
@@ -303,7 +303,7 @@
                 }
             ],
             "description": "A PHP7 utilitiy library, inspired by Java and others",
-            "time": "2016-07-20 21:27:34"
+            "time": "2016-08-10 13:27:02"
         },
         {
             "name": "michelf/php-markdown",
