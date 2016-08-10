@@ -4,10 +4,12 @@ namespace intrawarez\slim\annotations;
 
 /**
  * 
- * @author darjeeling
+ * The base class for HTTP method annotation handlers.
+ * 
+ * @author maxmeffert
  *
  */
-abstract class Method implements Annotation {
+abstract class Method implements SlimAnnotation {
 	
 	const GET = "GET";
 	const POST = "POST";

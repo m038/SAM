@@ -4,11 +4,13 @@ namespace intrawarez\slim\annotations;
 
 /**
  * 
- * @author darjeeling
+ * The annotation for PUT handlers.
+ * 
+ * @author maxmeffert
  * @Annotation
  *
  */
-class PUT extends Method implements Annotation {
+class PUT extends Method implements SlimAnnotation {
 	
 	public function __construct () {
 		$this->setName(METHOD::PUT);

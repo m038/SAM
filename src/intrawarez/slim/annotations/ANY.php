@@ -4,11 +4,13 @@ namespace intrawarez\slim\annotations;
 
 /**
  * 
- * @author darjeeling
+ * The annotation for ANY handlers.
+ * 
+ * @author maxmeffert
  * @Annotation
  *
  */
-class ANY implements Annotation {
+class ANY implements SlimAnnotation {
 	
 	public function __construct () {
 		$this->setName(METHOD::ANY);

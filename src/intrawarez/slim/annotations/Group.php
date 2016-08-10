@@ -4,11 +4,13 @@ namespace intrawarez\slim\annotations;
 
 /**
  * 
- * @author darjeeling
+ * The annotation for slim groups
+ * 
+ * @author maxmeffert
  * @Annotation
  *
  */
-class Group extends Method implements Annotation {
+class Group extends Method implements SlimAnnotation {
 		
 }
 

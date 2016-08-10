@@ -4,15 +4,13 @@ namespace intrawarez\slim\annotations;
 
 /**
  * 
- * The annotation for route patterns.
+ * Interface for slim annotations.
  * 
  * @author maxmeffert
  * @Annotation
  *
  */
-class Route implements SlimAnnotation {
-	
-	public $pattern;
+interface SlimAnnotation {
 	
 }
 

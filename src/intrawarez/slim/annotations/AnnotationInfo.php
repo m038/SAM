@@ -5,6 +5,13 @@ namespace intrawarez\slim\annotations;
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Annotations\AnnotationException;
 
+/**
+ * 
+ * A collection of utility functions for reading slim annotations.
+ * 
+ * @author maxmeffert
+ *
+ */
 abstract class AnnotationInfo {
 	
 	static private $reader;

@@ -4,11 +4,13 @@ namespace intrawarez\slim\annotations;
 
 /**
  * 
- * @author darjeeling
+ * The annotation for OPTIONS handlers.
+ * 
+ * @author maxmeffert
  * @Annotation
  *
  */
-class OPTIONS extends Method implements Annotation {
+class OPTIONS extends Method implements SlimAnnotation {
 	
 	public function __construct () {
 		$this->setName(METHOD::OPTIONS);
