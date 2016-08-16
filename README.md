@@ -1,5 +1,5 @@
-# slim3annotations
-Annotations for Slim3
+# [slim3annotations](https://intrawarez.github.io/slim3annotations/)
+Annotations for [Slim3](http://www.slimframework.com/).
 
 ## Installation
 
@@ -17,33 +17,88 @@ Documentation can be found [here](http://intrawarez.github.io/sabertooth/docs/).
 
 ### Setup
 
-*settings.php*
+#### settings.php
 ```php
 return [
-	
-		"settings" => [
-		
-			"namespaces" => [
-					
-					"intrawarez\\slim3annotations\\example\\controllers\\" 
-						=> "./src/intrawarez/slim3annotations/example/controllers"
-					
-			]
+
+		"@namespaces" => [
 				
-		]
+				"intrawarez\\slim3annotations\\example\\controllers\\" => __DIR__."/controllers"
+				
+		],
+		
+		...
 		
 ];
 ```
 
-*index.php*
+#### index.php
 ```php
-use intrawarez\slim3annotations\AnnotatedApp;
+use intrawarez\slim3annotations\App;
 
-$settings = require __DIR__ . '/path/to/settings.php';
+$settings = require __DIR__ . "/path/to/settings.php";
 
-$app = AnnotatedApp::from($settings);
+$app = App::from($settings);
+
+...
 
 $app->run();
+```
+
+### Groups
+
+#### dependencies.php
+```php
+$container["twig"] = function (Slim\Container $c) {
+
+	$settings = $c->get("settings");
+
+	$templatePath = $settings["renderer"]["template_path"];
+
+	$loader = new Twig_Loader_Filesystem($templatePath);
+
+	$twig = new Twig_Environment($loader);
+	$twig->addGlobal("basePath", dirname($_SERVER["SCRIPT_NAME"]));
+
+	return $twig;
+
+};
+```
+
+#### Hello.php
+```php
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+
+use intrawarez\slim3annotations\annotations\Group;
+use intrawarez\slim3annotations\annotations\Dependency;
+use intrawarez\slim3annotations\annotations\GET;
+
+/**
+ * Group(pattern="/")
+ */
+class Hello {
+
+/**
+  * @Dependency(id="twig")
+  * @var Twig_Environment
+  */
+  private $twig;
+
+ /**
+  *  @GET
+  */   
+  public function foo (ServerRequestInterface $req, ResponseInterface $res, array $args) {
+	
+    $res->getBody()->write($this->twig->render("index.twig",[
+				"hello" => "World"
+	]));
+	
+	return $res;
+  }
+
+}
+
 ```
 
 
