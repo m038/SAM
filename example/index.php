@@ -10,7 +10,7 @@ $container = [
 		
 			"namespaces" => [
 					
-					"intrawarez\\slim3annotations\\example\\controllers\\" => "./src/intrawarez/slim3annotations/example/controllers"
+					"intrawarez\\slim3annotations\\example\\controllers\\" => __DIR__."/controllers"
 					
 			]
 				
