@@ -31,6 +31,46 @@
 </code></pre>
 
 <h2>
+<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation</h2>
+
+<p>Documentation can be found <a href="http://intrawarez.github.io/sabertooth/docs/">here</a>.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<p><strong>DISCLAIMER:</strong> This sections is at Draft Level!</p>
+
+<h3>
+<a id="setup" class="anchor" href="#setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup</h3>
+
+<p><em>settings.php</em></p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">return</span> [</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">"</span>settings<span class="pl-pds">"</span></span> <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">            <span class="pl-s"><span class="pl-pds">"</span>namespaces<span class="pl-pds">"</span></span> <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">                    <span class="pl-s"><span class="pl-pds">"</span>intrawarez<span class="pl-cce">\\</span>slim3annotations<span class="pl-cce">\\</span>example<span class="pl-cce">\\</span>controllers<span class="pl-cce">\\</span><span class="pl-pds">"</span></span> </span>
+<span class="pl-s1">                        <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">"</span>./src/intrawarez/slim3annotations/example/controllers<span class="pl-pds">"</span></span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1">            ]</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">        ]</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">];</span></pre></div>
+
+<p><em>index.php</em></p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">intrawarez\slim3annotations\AnnotatedApp</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$settings</span> <span class="pl-k">=</span> <span class="pl-k">require</span> <span class="pl-c1">__DIR__</span> <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>/path/to/settings.php<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$app</span> <span class="pl-k">=</span> <span class="pl-c1">AnnotatedApp</span><span class="pl-k">::</span>from(<span class="pl-smi">$settings</span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$app</span><span class="pl-k">-&gt;</span>run();</span></pre></div>
+
+<h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
 
 <p>The MIT License (MIT)</p>
