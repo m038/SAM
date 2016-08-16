@@ -20,9 +20,10 @@
 
     <section class="main-content">
       <h1>
-<a id="slim3annotations" class="anchor" href="#slim3annotations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>slim3annotations</h1>
+<a id="slim3annotations" class="anchor" href="#slim3annotations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://intrawarez.github.io/slim3annotations/">slim3annotations</a>
+</h1>
 
-<p>Annotations for Slim3</p>
+<p>Annotations for <a href="http://www.slimframework.com/">Slim3</a>.</p>
 
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
@@ -43,32 +44,90 @@
 <h3>
 <a id="setup" class="anchor" href="#setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup</h3>
 
-<p><em>settings.php</em></p>
+<h4>
+<a id="settingsphp" class="anchor" href="#settingsphp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>settings.php</h4>
 
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">return</span> [</span>
 <span class="pl-s1"></span>
-<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">"</span>settings<span class="pl-pds">"</span></span> <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">"</span>@namespaces<span class="pl-pds">"</span></span> <span class="pl-k">=&gt;</span> [</span>
 <span class="pl-s1"></span>
-<span class="pl-s1">            <span class="pl-s"><span class="pl-pds">"</span>namespaces<span class="pl-pds">"</span></span> <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s1">                <span class="pl-s"><span class="pl-pds">"</span>intrawarez<span class="pl-cce">\\</span>slim3annotations<span class="pl-cce">\\</span>example<span class="pl-cce">\\</span>controllers<span class="pl-cce">\\</span><span class="pl-pds">"</span></span> <span class="pl-k">=&gt;</span> <span class="pl-c1">__DIR__</span><span class="pl-k">.</span><span class="pl-s"><span class="pl-pds">"</span>/controllers<span class="pl-pds">"</span></span></span>
 <span class="pl-s1"></span>
-<span class="pl-s1">                    <span class="pl-s"><span class="pl-pds">"</span>intrawarez<span class="pl-cce">\\</span>slim3annotations<span class="pl-cce">\\</span>example<span class="pl-cce">\\</span>controllers<span class="pl-cce">\\</span><span class="pl-pds">"</span></span> </span>
-<span class="pl-s1">                        <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">"</span>./src/intrawarez/slim3annotations/example/controllers<span class="pl-pds">"</span></span></span>
+<span class="pl-s1">        ],</span>
 <span class="pl-s1"></span>
-<span class="pl-s1">            ]</span>
-<span class="pl-s1"></span>
-<span class="pl-s1">        ]</span>
+<span class="pl-s1">        <span class="pl-k">...</span></span>
 <span class="pl-s1"></span>
 <span class="pl-s1">];</span></pre></div>
 
-<p><em>index.php</em></p>
+<h4>
+<a id="indexphp" class="anchor" href="#indexphp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>index.php</h4>
 
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">intrawarez\slim3annotations\AnnotatedApp</span>;</span>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">intrawarez\slim3annotations\App</span>;</span>
 <span class="pl-s1"></span>
-<span class="pl-s1"><span class="pl-smi">$settings</span> <span class="pl-k">=</span> <span class="pl-k">require</span> <span class="pl-c1">__DIR__</span> <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>/path/to/settings.php<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"><span class="pl-smi">$settings</span> <span class="pl-k">=</span> <span class="pl-k">require</span> <span class="pl-c1">__DIR__</span> <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">"</span>/path/to/settings.php<span class="pl-pds">"</span></span>;</span>
 <span class="pl-s1"></span>
-<span class="pl-s1"><span class="pl-smi">$app</span> <span class="pl-k">=</span> <span class="pl-c1">AnnotatedApp</span><span class="pl-k">::</span>from(<span class="pl-smi">$settings</span>);</span>
+<span class="pl-s1"><span class="pl-smi">$app</span> <span class="pl-k">=</span> <span class="pl-c1">App</span><span class="pl-k">::</span>from(<span class="pl-smi">$settings</span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">...</span></span>
 <span class="pl-s1"></span>
 <span class="pl-s1"><span class="pl-smi">$app</span><span class="pl-k">-&gt;</span>run();</span></pre></div>
+
+<h3>
+<a id="groups" class="anchor" href="#groups" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Groups</h3>
+
+<h4>
+<a id="dependenciesphp" class="anchor" href="#dependenciesphp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>dependencies.php</h4>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$container</span>[<span class="pl-s"><span class="pl-pds">"</span>twig<span class="pl-pds">"</span></span>] <span class="pl-k">=</span> <span class="pl-k">function</span> (<span class="pl-c1">Slim\</span><span class="pl-c1">Container</span> <span class="pl-smi">$c</span>) {</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-smi">$settings</span> <span class="pl-k">=</span> <span class="pl-smi">$c</span><span class="pl-k">-&gt;</span>get(<span class="pl-s"><span class="pl-pds">"</span>settings<span class="pl-pds">"</span></span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-smi">$templatePath</span> <span class="pl-k">=</span> <span class="pl-smi">$settings</span>[<span class="pl-s"><span class="pl-pds">"</span>renderer<span class="pl-pds">"</span></span>][<span class="pl-s"><span class="pl-pds">"</span>template_path<span class="pl-pds">"</span></span>];</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-smi">$loader</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Twig_Loader_Filesystem</span>(<span class="pl-smi">$templatePath</span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-smi">$twig</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Twig_Environment</span>(<span class="pl-smi">$loader</span>);</span>
+<span class="pl-s1">    <span class="pl-smi">$twig</span><span class="pl-k">-&gt;</span>addGlobal(<span class="pl-s"><span class="pl-pds">"</span>basePath<span class="pl-pds">"</span></span>, <span class="pl-c1">dirname</span>(<span class="pl-smi">$_SERVER</span>[<span class="pl-s"><span class="pl-pds">"</span>SCRIPT_NAME<span class="pl-pds">"</span></span>]));</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-k">return</span> <span class="pl-smi">$twig</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">};</span></pre></div>
+
+<h4>
+<a id="hellophp" class="anchor" href="#hellophp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Hello.php</h4>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Psr\Http\Message\ResponseInterface</span>;</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Psr\Http\Message\ServerRequestInterface</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">intrawarez\slim3annotations\annotations\Group</span>;</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">intrawarez\slim3annotations\annotations\Dependency</span>;</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">intrawarez\slim3annotations\annotations\GET</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">/**</span></span>
+<span class="pl-s1"><span class="pl-c"> * Group(pattern="/")</span></span>
+<span class="pl-s1"><span class="pl-c"> */</span></span>
+<span class="pl-s1"><span class="pl-k">class</span> <span class="pl-en">Hello</span> {</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">/**</span></span>
+<span class="pl-s1"><span class="pl-c">  * @Dependency(id="twig")</span></span>
+<span class="pl-s1"><span class="pl-c">  * <span class="pl-k">@var</span> Twig_Environment</span></span>
+<span class="pl-s1"><span class="pl-c">  */</span></span>
+<span class="pl-s1">  <span class="pl-k">private</span> <span class="pl-smi">$twig</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"> <span class="pl-c">/**</span></span>
+<span class="pl-s1"><span class="pl-c">  *  @GET</span></span>
+<span class="pl-s1"><span class="pl-c">  */</span>   </span>
+<span class="pl-s1">  <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">foo</span> (<span class="pl-c1">ServerRequestInterface</span> <span class="pl-smi">$req</span>, <span class="pl-c1">ResponseInterface</span> <span class="pl-smi">$res</span>, <span class="pl-k">array</span> <span class="pl-smi">$args</span>) {</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-smi">$res</span><span class="pl-k">-&gt;</span>getBody()<span class="pl-k">-&gt;</span>write(<span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">twig</span><span class="pl-k">-&gt;</span>render(<span class="pl-s"><span class="pl-pds">"</span>index.twig<span class="pl-pds">"</span></span>,[</span>
+<span class="pl-s1">                <span class="pl-s"><span class="pl-pds">"</span>hello<span class="pl-pds">"</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">"</span>World<span class="pl-pds">"</span></span></span>
+<span class="pl-s1">    ]));</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-k">return</span> <span class="pl-smi">$res</span>;</span>
+<span class="pl-s1">  }</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">}</span>
+<span class="pl-s1"></span></pre></div>
 
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
