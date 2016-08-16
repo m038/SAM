@@ -7,6 +7,46 @@ Annotations for Slim3
 composer require intrawarez/slim3annotations
 ```
 
+## Documentation
+
+Documentation can be found [here](http://intrawarez.github.io/sabertooth/docs/).
+
+## Usage
+
+**DISCLAIMER:** This sections is at Draft Level!
+
+### Setup
+
+*settings.php*
+```php
+return [
+	
+		"settings" => [
+		
+			"namespaces" => [
+					
+					"intrawarez\\slim3annotations\\example\\controllers\\" 
+						=> "./src/intrawarez/slim3annotations/example/controllers"
+					
+			]
+				
+		]
+		
+];
+```
+
+*index.php*
+```php
+use intrawarez\slim3annotations\AnnotatedApp;
+
+$settings = require __DIR__ . '/path/to/settings.php';
+
+$app = AnnotatedApp::from($settings);
+
+$app->run();
+```
+
+
 ## License
 
 The MIT License (MIT)
