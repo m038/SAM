@@ -1,11 +1,14 @@
 <?php
 
-namespace intrawarez\slim\annotations;
+namespace intrawarez\slim3annotations;
 
 
+use Slim\App;
 use Interop\Container\ContainerInterface;
 use intrawarez\sabertooth\reflection\Reflections;
-use Slim\App;
+use intrawarez\slim3annotations\annotations\SlimAnnotations;
+use intrawarez\slim3annotations\annotations\Route;
+use intrawarez\slim3annotations\annotations\Method;
 
 
 /**
@@ -75,10 +78,11 @@ final class AnnotatedApp extends App {
 		$class = Reflections::reflectionClassOf($controller);
 		
 		$route = SlimAnnotations::routeOf($class);
-		
+				
 		if ($route instanceof Route) {
 			
 			$pattern = !empty($route->pattern) ? $route->pattern : "/";
+			
 			
 			$reflectionMethods = Reflections::publicMethodsOf($class);
 			

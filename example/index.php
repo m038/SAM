@@ -2,7 +2,7 @@
 
 include_once "../vendor/autoload.php";
 
-use intrawarez\slim\annotations\AnnotatedApp;
+use intrawarez\slim3annotations\AnnotatedApp;
 
 $container = [
 	
@@ -10,7 +10,7 @@ $container = [
 		
 			"namespaces" => [
 					
-					"intrawarez\\slim\\annotations\\example\\controllers\\" => "./src/intrawarez/slim/annotations/example/controllers"
+					"intrawarez\\slim3annotations\\example\\controllers\\" => "./src/intrawarez/slim3annotations/example/controllers"
 					
 			]
 				

@@ -1,6 +1,6 @@
 <?php
 
-namespace intrawarez\slim\annotations;
+namespace intrawarez\slim3annotations\annotations;
 
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Doctrine\Common\Annotations\AnnotationReader;

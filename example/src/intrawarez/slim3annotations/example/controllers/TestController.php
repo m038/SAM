@@ -1,12 +1,12 @@
 <?php
 
-namespace intrawarez\slim\annotations\example\controllers;
+namespace intrawarez\slim3annotations\example\controllers;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-use intrawarez\slim\annotations\Route;
-use intrawarez\slim\annotations\GET;
+use intrawarez\slim3annotations\annotations\Route;
+use intrawarez\slim3annotations\annotations\GET;
 
 /**
  * 
