@@ -10,7 +10,7 @@ namespace intrawarez\slim3annotations\annotations;
  * @Annotation
  *
  */
-class OPTIONS extends Method implements SlimAnnotation {
+class OPTIONS extends Method implements Annotation {
 	
 	public function __construct () {
 		$this->setName(METHOD::OPTIONS);

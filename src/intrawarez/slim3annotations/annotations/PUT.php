@@ -10,7 +10,7 @@ namespace intrawarez\slim3annotations\annotations;
  * @Annotation
  *
  */
-class PUT extends Method implements SlimAnnotation {
+class PUT extends Method implements Annotation {
 	
 	public function __construct () {
 		$this->setName(METHOD::PUT);

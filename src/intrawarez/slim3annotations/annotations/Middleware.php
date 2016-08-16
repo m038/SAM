@@ -10,7 +10,7 @@ namespace intrawarez\slim3annotations\annotations;
  * @Annotation
  *
  */
-class Middleware implements SlimAnnotation {
+class Middleware implements Annotation {
 	
 	public $name;
 	

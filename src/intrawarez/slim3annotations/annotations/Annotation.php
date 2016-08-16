@@ -10,7 +10,7 @@ namespace intrawarez\slim3annotations\annotations;
  * @Annotation
  *
  */
-interface SlimAnnotation {
+interface Annotation {
 	
 }
 

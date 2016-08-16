@@ -10,7 +10,7 @@ namespace intrawarez\slim3annotations\annotations;
  * @Annotation
  *
  */
-class Dependency implements SlimAnnotation {
+class Dependency implements Annotation {
 	
 	public $id;
 	

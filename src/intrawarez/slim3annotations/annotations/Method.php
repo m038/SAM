@@ -9,7 +9,7 @@ namespace intrawarez\slim3annotations\annotations;
  * @author maxmeffert
  *
  */
-abstract class Method implements SlimAnnotation {
+abstract class Method implements Annotation {
 	
 	const GET = "GET";
 	const POST = "POST";
@@ -18,7 +18,8 @@ abstract class Method implements SlimAnnotation {
 	const OPTIONS = "OPTIONS";
 	const ANY = "ANY";
 	
-	private $name;
+	private $name = Method::ANY;
+	public $pattern = "";
 	
 	final public function getName () {
 		return $this->name;

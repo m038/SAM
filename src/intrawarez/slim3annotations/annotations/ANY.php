@@ -10,7 +10,7 @@ namespace intrawarez\slim3annotations\annotations;
  * @Annotation
  *
  */
-class ANY implements SlimAnnotation {
+class ANY implements Annotation {
 	
 	public function __construct () {
 		$this->setName(METHOD::ANY);

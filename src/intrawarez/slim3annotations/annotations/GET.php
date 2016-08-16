@@ -10,7 +10,7 @@ namespace intrawarez\slim3annotations\annotations;
  * @Annotation
  *
  */
-class GET extends Method implements SlimAnnotation {
+class GET extends Method implements Annotation {
 	
 	public function __construct () {
 		$this->setName(METHOD::GET);

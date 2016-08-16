@@ -10,7 +10,7 @@ namespace intrawarez\slim3annotations\annotations;
  * @Annotation
  *
  */
-class POST extends Method implements SlimAnnotation {
+class POST extends Method implements Annotation {
 
 	public function __construct () {
 		$this->setName(METHOD::POST);

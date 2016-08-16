@@ -10,8 +10,10 @@ namespace intrawarez\slim3annotations\annotations;
  * @Annotation
  *
  */
-class Group extends Method implements SlimAnnotation {
-		
+class Group implements Annotation {
+	
+	public $pattern;
+	
 }
 
 ?>
