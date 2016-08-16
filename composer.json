@@ -10,7 +10,10 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-        	"": "src/"
+        	"": [
+        		"src/",
+        		"example/src/"
+        	]
         }
     },
     "minimum-stability": "dev",

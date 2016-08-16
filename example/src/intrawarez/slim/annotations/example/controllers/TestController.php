@@ -2,6 +2,9 @@
 
 namespace intrawarez\slim\annotations\example\controllers;
 
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+
 use intrawarez\slim\annotations\Route;
 use intrawarez\slim\annotations\GET;
 
@@ -22,9 +25,11 @@ class TestController {
 	 * 
 	 * @GET
 	 */
-	public function onGet ($req, $res, array $args) {
+	public function onGet (ServerRequestInterface $req, ResponseInterface $res, array $args) {
 		
-		echo "it works";
+		$res->getBody()->write("it worksssss");
+		
+		return $res;
 		
 	}
 	

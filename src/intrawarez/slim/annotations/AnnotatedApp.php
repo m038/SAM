@@ -17,23 +17,13 @@ final class AnnotatedApp extends App {
 	
 	
 	/**
-	 * Creates a new AnnotatedApp instances from a given container and an array of namespaces.
-	 * 
-	 * @param ContainerInterface|array $container The given container.
-	 * @param array $namespaces The given namespaces as namespace-directory mapping.
+	 * Creates a new AnnotatedApp instances.
+	 * @param ContainerInterface|array $container
 	 * @return AnnotatedApp
 	 */
-	static public function from ($container, array $namespaces) : AnnotatedApp {
+	static public function from ($container) : AnnotatedApp {
 		
-		$app = new AnnotatedApp($container);
-		
-		foreach ($namespaces as $namespace => $directory) {
-			
-			$app->loadNamespace($namespace, $directory);
-			
-		}
-		
-		return $app;
+		return new AnnotatedApp($container);
 		
 	}
 	
@@ -51,7 +41,29 @@ final class AnnotatedApp extends App {
 	 * @param unknown $container
 	 */
 	public function __construct($container) {
+		
 		parent::__construct($container);
+		
+		$this->init();
+		
+	}
+	
+	private function init () {
+		
+		if ($this->getContainer()->has("settings")) {
+			
+			$settings = $this->getContainer()->get("settings");
+			
+			if (isset($settings["namespaces"]) && is_array($settings["namespaces"])) {
+				
+				$namespaces = $settings["namespaces"];
+						
+				$this->loadAllNamespaces($namespaces);
+							
+			}
+			
+		}
+		
 	}
 	
 	/**
@@ -79,7 +91,7 @@ final class AnnotatedApp extends App {
 					
 					if ($method) {
 						
-						$pattern = strval($methodRoute instanceof Route && !empty($methodRoute->pattern) ? $methodRoute->pattern : "");
+						$pattern = strval($methodRoute instanceof Route ? $methodRoute->pattern : "");
 						
 						switch ($method->getName()) {
 				
@@ -156,8 +168,6 @@ final class AnnotatedApp extends App {
 	 */
 	public function loadNamespace (string $namespace, string $directory)  {
 		
-		
-		
 		$controllers = array_map(function($filename)use($namespace){
 			
 			return $namespace.pathinfo($filename,PATHINFO_FILENAME);
@@ -167,9 +177,22 @@ final class AnnotatedApp extends App {
 			return $file != "." && $file != "..";
 			
 		}));
-		
-				
+			
 		$this->loadAll($controllers);
+		
+	}
+	
+	/**
+	 * 
+	 * @param array $namespaces
+	 */
+	public function loadAllNamespaces (array $namespaces) {
+		
+		foreach ($namespaces as $namespace => $directory) {
+			
+			$this->loadNamespace($namespace, $directory);
+			
+		}
 		
 	}
 	
