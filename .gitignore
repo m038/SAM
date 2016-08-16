@@ -1,7 +1,13 @@
-vendor
-composer.phar
-
+.settings
 .project
 .buildpath
-.settings
 
+vendor
+cache
+
+composer.phar
+
+*.phar
+
+*.md.html
+test.php
