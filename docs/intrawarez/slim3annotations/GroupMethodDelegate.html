@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>intrawarez\slim3annotations\AnnotatedApp | API</title>
+    <title>intrawarez\slim3annotations\GroupMethodDelegate | API</title>
 
             <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:intrawarez_slim3annotations_AnnotatedApp" data-root-path="../../">
+    <body id="class" data-name="class:intrawarez_slim3annotations_GroupMethodDelegate" data-root-path="../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -66,20 +66,21 @@
                                                             <li><a href="../../intrawarez.html">intrawarez</a></li>
                                         <li><a href="../../intrawarez/slim3annotations.html">slim3annotations</a></li>
     
-                <li>AnnotatedApp</li>
+                <li>GroupMethodDelegate</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            AnnotatedApp
+            GroupMethodDelegate
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>AnnotatedApp</strong>        extends <abbr title="Slim\App">App</abbr>
+    <strong>GroupMethodDelegate</strong>        extends <a href="../../intrawarez/slim3annotations/AbstractDelegate.html"><abbr title="intrawarez\slim3annotations\AbstractDelegate">AbstractDelegate</abbr></a>        implements
+        <a href="../../intrawarez/slim3annotations/DelegateInterface.html"><abbr title="intrawarez\slim3annotations\DelegateInterface">DelegateInterface</abbr></a>
 </p>
 
         
@@ -94,31 +95,20 @@
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;<a href="../../intrawarez/slim3annotations/AnnotatedApp.html"><abbr title="intrawarez\slim3annotations\AnnotatedApp">AnnotatedApp</abbr></a>
+                    static&nbsp;object
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_from">from</a>(<abbr title="Interop\Container\ContainerInterface">ContainerInterface</abbr>|array $container)
+                    <a href="#method_newInstance">newInstance</a>(<a target="_blank" href="http://php.net/ReflectionClass">ReflectionClass</a> $class, <abbr title="Interop\Container\ContainerInterface">ContainerInterface</abbr> $container)
         
-                                            <p>Creates a new AnnotatedApp instances.</p>                </div>
-                <div class="col-md-2"></div>
+                                            <p>Creates a new instance of a given reflection class with injected dependencies from a given container.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../intrawarez/slim3annotations/AbstractDelegate.html#method_newInstance"><abbr title="intrawarez\slim3annotations\AbstractDelegate">AbstractDelegate</abbr></a></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(<abbr title="intrawarez\slim3annotations\unknown">unknown</abbr> $container)
-        
-                                            <p class="no-description">No description</p>
-                                    </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_load">load</a>(<abbr title="intrawarez\slim3annotations\string">string</abbr> $controller)
+                    <a href="#method___construct">__construct</a>(<abbr title="intrawarez\slim3annotations\string">string</abbr> $className, <abbr title="intrawarez\slim3annotations\string">string</abbr> $methodName)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -126,32 +116,10 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    
+                    callable
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_loadAll">loadAll</a>(array $controllers)
-        
-                                            <p class="no-description">No description</p>
-                                    </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_loadNamespace">loadNamespace</a>(<abbr title="intrawarez\slim3annotations\string">string</abbr> $namespace, <abbr title="intrawarez\slim3annotations\string">string</abbr> $directory)
-        
-                                            <p class="no-description">No description</p>
-                                    </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_loadAllNamespaces">loadAllNamespaces</a>(array $namespaces)
+                    <a href="#method_getCallable">getCallable</a>(<abbr title="Interop\Container\ContainerInterface">ContainerInterface</abbr> $container)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -164,10 +132,10 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method_from">
-        <div class="location">at line         line 27</div>
-        <code>        static            <a href="../../intrawarez/slim3annotations/AnnotatedApp.html"><abbr title="intrawarez\slim3annotations\AnnotatedApp">AnnotatedApp</abbr></a>
-    <strong>from</strong>(<abbr title="Interop\Container\ContainerInterface">ContainerInterface</abbr>|array $container)
+                    <h3 id="method_newInstance">
+        <div class="location">in <a href="../../intrawarez/slim3annotations/AbstractDelegate.html#method_newInstance"><abbr title="intrawarez\slim3annotations\AbstractDelegate">AbstractDelegate</abbr></a> at line         line 25</div>
+        <code>final        static            object
+    <strong>newInstance</strong>(<a target="_blank" href="http://php.net/ReflectionClass">ReflectionClass</a> $class, <abbr title="Interop\Container\ContainerInterface">ContainerInterface</abbr> $container)
         </code>
     </h3>
     <div class="details">
@@ -175,15 +143,20 @@
     
 
                     <div class="method-description">
-                                    <p>Creates a new AnnotatedApp instances.</p>                                </div>
+                                    <p>Creates a new instance of a given reflection class with injected dependencies from a given container.</p>                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
-                <td><abbr title="Interop\Container\ContainerInterface">ContainerInterface</abbr>|array</td>
+                <td><a target="_blank" href="http://php.net/ReflectionClass">ReflectionClass</a></td>
+                <td>$class</td>
+                <td>The given reflection class.</td>
+            </tr>
+                    <tr>
+                <td><abbr title="Interop\Container\ContainerInterface">ContainerInterface</abbr></td>
                 <td>$container</td>
-                <td></td>
+                <td>The given container.</td>
             </tr>
             </table>
 
@@ -192,7 +165,7 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../intrawarez/slim3annotations/AnnotatedApp.html"><abbr title="intrawarez\slim3annotations\AnnotatedApp">AnnotatedApp</abbr></a></td>
+            <td>object</td>
             <td></td>
         </tr>
     </table>
@@ -205,9 +178,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line         line 46</div>
+        <div class="location">at line         line 17</div>
         <code>                    
-    <strong>__construct</strong>(<abbr title="intrawarez\slim3annotations\unknown">unknown</abbr> $container)
+    <strong>__construct</strong>(<abbr title="intrawarez\slim3annotations\string">string</abbr> $className, <abbr title="intrawarez\slim3annotations\string">string</abbr> $methodName)
         </code>
     </h3>
     <div class="details">
@@ -219,134 +192,56 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><abbr title="intrawarez\slim3annotations\unknown">unknown</abbr></td>
+                <td><abbr title="intrawarez\slim3annotations\string">string</abbr></td>
+                <td>$className</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><abbr title="intrawarez\slim3annotations\string">string</abbr></td>
+                <td>$methodName</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getCallable">
+        <div class="location">at line         line 24</div>
+        <code>                    callable
+    <strong>getCallable</strong>(<abbr title="Interop\Container\ContainerInterface">ContainerInterface</abbr> $container)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Interop\Container\ContainerInterface">ContainerInterface</abbr></td>
                 <td>$container</td>
                 <td></td>
             </tr>
             </table>
 
             
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_load">
-        <div class="location">at line         line 76</div>
-        <code>                    
-    <strong>load</strong>(<abbr title="intrawarez\slim3annotations\string">string</abbr> $controller)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                <div class="tags">
-                            <h4>Parameters</h4>
+                            <h4>Return Value</h4>
 
                     <table class="table table-condensed">
-                    <tr>
-                <td><abbr title="intrawarez\slim3annotations\string">string</abbr></td>
-                <td>$controller</td>
-                <td></td>
-            </tr>
-            </table>
+        <tr>
+            <td>callable</td>
+            <td></td>
+        </tr>
+    </table>
 
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_loadAll">
-        <div class="location">at line         line 157</div>
-        <code>                    
-    <strong>loadAll</strong>(array $controllers)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>array</td>
-                <td>$controllers</td>
-                <td></td>
-            </tr>
-            </table>
-
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_loadNamespace">
-        <div class="location">at line         line 173</div>
-        <code>                    
-    <strong>loadNamespace</strong>(<abbr title="intrawarez\slim3annotations\string">string</abbr> $namespace, <abbr title="intrawarez\slim3annotations\string">string</abbr> $directory)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td><abbr title="intrawarez\slim3annotations\string">string</abbr></td>
-                <td>$namespace</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td><abbr title="intrawarez\slim3annotations\string">string</abbr></td>
-                <td>$directory</td>
-                <td></td>
-            </tr>
-            </table>
-
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_loadAllNamespaces">
-        <div class="location">at line         line 193</div>
-        <code>                    
-    <strong>loadAllNamespaces</strong>(array $namespaces)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>array</td>
-                <td>$namespaces</td>
-                <td></td>
-            </tr>
-            </table>
-
-            
             
             
                     </div>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>intrawarez\slim3annotations\annotations\SlimAnnotations | API</title>
+    <title>intrawarez\slim3annotations\annotations\Annotations | API</title>
 
             <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:intrawarez_slim3annotations_annotations_SlimAnnotations" data-root-path="../../../">
+    <body id="class" data-name="class:intrawarez_slim3annotations_annotations_Annotations" data-root-path="../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -67,27 +67,25 @@
                                         <li><a href="../../../intrawarez/slim3annotations.html">slim3annotations</a></li>
                                         <li><a href="../../../intrawarez/slim3annotations/annotations.html">annotations</a></li>
     
-                <li>SlimAnnotations</li>
+                <li>Annotations</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            SlimAnnotations
+            Annotations
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>SlimAnnotations</strong>
+    <strong>Annotations</strong>
 </p>
 
         
     
 
-            <div class="description">
-            <p>A collection of utility functions for reading slim annotations.</p>                    </div>
     
     
     
@@ -97,10 +95,20 @@
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;
+                    static&nbsp;<abbr title="Doctrine\Common\Annotations\AnnotationReader">AnnotationReader</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_annotationsOf">annotationsOf</a>(<a target="_blank" href="http://php.net/Reflector">Reflector</a> $reflector)
+                    <a href="#method_Reader">Reader</a>()
+        
+                                            <p>Gets the singleton instance of an annotation reader.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;<abbr title="intrawarez\sabertooth\optionals\OptionalInterface">OptionalInterface</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_Group">Group</a>(<a target="_blank" href="http://php.net/ReflectionClass">ReflectionClass</a> $class)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -108,10 +116,10 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;object|null
+                    static&nbsp;array
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_annotationOf">annotationOf</a>(<a target="_blank" href="http://php.net/Reflector">Reflector</a> $reflector, <abbr title="intrawarez\slim3annotations\annotations\unknown">unknown</abbr> $annotationName)
+                    <a href="#method_GroupMiddlewares">GroupMiddlewares</a>(<a target="_blank" href="http://php.net/ReflectionClass">ReflectionClass</a> $class)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -119,10 +127,10 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;<a href="../../../intrawarez/slim3annotations/annotations/Route.html"><abbr title="intrawarez\slim3annotations\annotations\Route">Route</abbr></a>
+                    static&nbsp;<abbr title="intrawarez\sabertooth\optionals\OptionalInterface">OptionalInterface</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_routeOf">routeOf</a>(<a target="_blank" href="http://php.net/Reflector">Reflector</a> $reflector)
+                    <a href="#method_Dependency">Dependency</a>(<a target="_blank" href="http://php.net/ReflectionProperty">ReflectionProperty</a> $property)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -130,10 +138,10 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;<a href="../../../intrawarez/slim3annotations/annotations/Method.html"><abbr title="intrawarez\slim3annotations\annotations\Method">Method</abbr></a>
+                    static&nbsp;<abbr title="intrawarez\sabertooth\optionals\OptionalInterface">OptionalInterface</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_methodOf">methodOf</a>(<a target="_blank" href="http://php.net/Reflector">Reflector</a> $reflector)
+                    <a href="#method_Method">Method</a>(<a target="_blank" href="http://php.net/ReflectionMethod">ReflectionMethod</a> $method)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -141,10 +149,10 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;<a href="../../../intrawarez/slim3annotations/annotations/Middleware.html"><abbr title="intrawarez\slim3annotations\annotations\Middleware">Middleware</abbr></a>
+                    static&nbsp;array
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_middlewaresOf">middlewaresOf</a>(<a target="_blank" href="http://php.net/Reflector">Reflector</a> $reflector)
+                    <a href="#method_MethodMiddlewares">MethodMiddlewares</a>(<a target="_blank" href="http://php.net/ReflectionMethod">ReflectionMethod</a> $method)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -157,10 +165,40 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method_annotationsOf">
+                    <h3 id="method_Reader">
+        <div class="location">at line         line 39</div>
+        <code>final        static            <abbr title="Doctrine\Common\Annotations\AnnotationReader">AnnotationReader</abbr>
+    <strong>Reader</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Gets the singleton instance of an annotation reader.</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Doctrine\Common\Annotations\AnnotationReader">AnnotationReader</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_Group">
         <div class="location">at line         line 56</div>
-        <code>        static            
-    <strong>annotationsOf</strong>(<a target="_blank" href="http://php.net/Reflector">Reflector</a> $reflector)
+        <code>final        static            <abbr title="intrawarez\sabertooth\optionals\OptionalInterface">OptionalInterface</abbr>
+    <strong>Group</strong>(<a target="_blank" href="http://php.net/ReflectionClass">ReflectionClass</a> $class)
         </code>
     </h3>
     <div class="details">
@@ -172,51 +210,8 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><a target="_blank" href="http://php.net/Reflector">Reflector</a></td>
-                <td>$reflector</td>
-                <td></td>
-            </tr>
-            </table>
-
-            
-            
-                            <h4>Exceptions</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td><abbr title="Doctrine\Common\Annotations\AnnotationException">AnnotationException</abbr></td>
-                <td></td>
-            </tr>
-            </table>
-
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_annotationOf">
-        <div class="location">at line         line 87</div>
-        <code>        static            object|null
-    <strong>annotationOf</strong>(<a target="_blank" href="http://php.net/Reflector">Reflector</a> $reflector, <abbr title="intrawarez\slim3annotations\annotations\unknown">unknown</abbr> $annotationName)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td><a target="_blank" href="http://php.net/Reflector">Reflector</a></td>
-                <td>$reflector</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td><abbr title="intrawarez\slim3annotations\annotations\unknown">unknown</abbr></td>
-                <td>$annotationName</td>
+                <td><a target="_blank" href="http://php.net/ReflectionClass">ReflectionClass</a></td>
+                <td>$class</td>
                 <td></td>
             </tr>
             </table>
@@ -226,54 +221,7 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td>object|null</td>
-            <td></td>
-        </tr>
-    </table>
-
-            
-                            <h4>Exceptions</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td><abbr title="Doctrine\Common\Annotations\AnnotationException">AnnotationException</abbr></td>
-                <td></td>
-            </tr>
-            </table>
-
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_routeOf">
-        <div class="location">at line         line 116</div>
-        <code>        static            <a href="../../../intrawarez/slim3annotations/annotations/Route.html"><abbr title="intrawarez\slim3annotations\annotations\Route">Route</abbr></a>
-    <strong>routeOf</strong>(<a target="_blank" href="http://php.net/Reflector">Reflector</a> $reflector)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td><a target="_blank" href="http://php.net/Reflector">Reflector</a></td>
-                <td>$reflector</td>
-                <td></td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td><a href="../../../intrawarez/slim3annotations/annotations/Route.html"><abbr title="intrawarez\slim3annotations\annotations\Route">Route</abbr></a></td>
+            <td><abbr title="intrawarez\sabertooth\optionals\OptionalInterface">OptionalInterface</abbr></td>
             <td></td>
         </tr>
     </table>
@@ -285,10 +233,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_methodOf">
-        <div class="location">at line         line 127</div>
-        <code>        static            <a href="../../../intrawarez/slim3annotations/annotations/Method.html"><abbr title="intrawarez\slim3annotations\annotations\Method">Method</abbr></a>
-    <strong>methodOf</strong>(<a target="_blank" href="http://php.net/Reflector">Reflector</a> $reflector)
+                    <h3 id="method_GroupMiddlewares">
+        <div class="location">at line         line 69</div>
+        <code>final        static            array
+    <strong>GroupMiddlewares</strong>(<a target="_blank" href="http://php.net/ReflectionClass">ReflectionClass</a> $class)
         </code>
     </h3>
     <div class="details">
@@ -300,8 +248,8 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><a target="_blank" href="http://php.net/Reflector">Reflector</a></td>
-                <td>$reflector</td>
+                <td><a target="_blank" href="http://php.net/ReflectionClass">ReflectionClass</a></td>
+                <td>$class</td>
                 <td></td>
             </tr>
             </table>
@@ -311,7 +259,7 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../../intrawarez/slim3annotations/annotations/Method.html"><abbr title="intrawarez\slim3annotations\annotations\Method">Method</abbr></a></td>
+            <td>array</td>
             <td></td>
         </tr>
     </table>
@@ -323,10 +271,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_middlewaresOf">
-        <div class="location">at line         line 138</div>
-        <code>        static            <a href="../../../intrawarez/slim3annotations/annotations/Middleware.html"><abbr title="intrawarez\slim3annotations\annotations\Middleware">Middleware</abbr></a>
-    <strong>middlewaresOf</strong>(<a target="_blank" href="http://php.net/Reflector">Reflector</a> $reflector)
+                    <h3 id="method_Dependency">
+        <div class="location">at line         line 82</div>
+        <code>final        static            <abbr title="intrawarez\sabertooth\optionals\OptionalInterface">OptionalInterface</abbr>
+    <strong>Dependency</strong>(<a target="_blank" href="http://php.net/ReflectionProperty">ReflectionProperty</a> $property)
         </code>
     </h3>
     <div class="details">
@@ -338,8 +286,8 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><a target="_blank" href="http://php.net/Reflector">Reflector</a></td>
-                <td>$reflector</td>
+                <td><a target="_blank" href="http://php.net/ReflectionProperty">ReflectionProperty</a></td>
+                <td>$property</td>
                 <td></td>
             </tr>
             </table>
@@ -349,7 +297,83 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../../intrawarez/slim3annotations/annotations/Middleware.html"><abbr title="intrawarez\slim3annotations\annotations\Middleware">Middleware</abbr></a></td>
+            <td><abbr title="intrawarez\sabertooth\optionals\OptionalInterface">OptionalInterface</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_Method">
+        <div class="location">at line         line 95</div>
+        <code>final        static            <abbr title="intrawarez\sabertooth\optionals\OptionalInterface">OptionalInterface</abbr>
+    <strong>Method</strong>(<a target="_blank" href="http://php.net/ReflectionMethod">ReflectionMethod</a> $method)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/ReflectionMethod">ReflectionMethod</a></td>
+                <td>$method</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="intrawarez\sabertooth\optionals\OptionalInterface">OptionalInterface</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_MethodMiddlewares">
+        <div class="location">at line         line 108</div>
+        <code>final        static            array
+    <strong>MethodMiddlewares</strong>(<a target="_blank" href="http://php.net/ReflectionMethod">ReflectionMethod</a> $method)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/ReflectionMethod">ReflectionMethod</a></td>
+                <td>$method</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
             <td></td>
         </tr>
     </table>
