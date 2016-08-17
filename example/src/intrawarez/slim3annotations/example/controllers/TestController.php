@@ -26,11 +26,11 @@ class TestController {
 	 * @var \Twig_Environment
 	 * 
 	 */
-	private $twig ;
+	private $twig;
 	
 	
 	/**
-	 * @GET(pattern="")
+	 * @GET
 	 * 
 	 * @param ServerRequestInterface $req
 	 * @param ResponseInterface $res
@@ -45,7 +45,7 @@ class TestController {
 		$twig = $this->twig;
 	
 		$res->getBody()->write($twig->render("index.twig",[
-				"name" => "Bart Simpson"
+				"hello" => "World"
 		]));
 		
 		return $res;
