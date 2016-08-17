@@ -2,17 +2,15 @@
 
 namespace intrawarez\slim3annotations;
 
-
 use Interop\Container\ContainerInterface;
 use intrawarez\sabertooth\reflection\Reflections;
-use intrawarez\slim3annotations\annotations\SlimAnnotations;
-use intrawarez\slim3annotations\annotations\Route;
-use intrawarez\slim3annotations\annotations\Method;
-use Symfony\Component\Finder\Finder;
 use intrawarez\slim3annotations\annotations\Group;
+use intrawarez\slim3annotations\annotations\Annotations;
 
 
 /**
+ * An extension of \Slim\App which loads its handlers automatically,
+ * depending on annotation markup.
  * 
  * @author maxmeffert
  *
@@ -21,51 +19,49 @@ class App extends \Slim\App {
 	
 	
 	/**
-	 * Creates a new AnnotatedApp instances.
+	 * Creates a new App instances.
 	 * @param array|\Interop\Container\ContainerInterface $container
 	 * @return App
 	 */
-	static public function create ($container) : AnnotatedApp {
+	static public function create ($container) : App {
 		
 		return new App($container);
 		
 	}
-	
+		
 	/**
+	 * Constructs a new App instance from a given container.
 	 * 
-	 * @param \ReflectionMethod $method
-	 * @return string
+	 * @param array|\Interop\Container\ContainerInterface $container The given container.
 	 */
-	static private function callableName (\ReflectionMethod $method) : string {
-		return $method->getDeclaringClass()->getName() . ":" . $method->getName();
-	}
-	
-	/**
-	 * 
-	 * @param unknown $container
-	 */
-	public function __construct($container) {
+	public function __construct($container = []) {
 		
 		$container["callableResolver"] = function($container){
-// 			var_dump($container);
-// 			throw new \Exception("asdf");
+			
 			return new CallableResolver($container);
+			
 		};
 		
 		parent::__construct($container);
 		
-// 		$this->registerCallableResolver();
-		$this->init();
+		$this->loadAllNamespaces($this->getNamespaces());
 		
 	}
 	
+	/**
+	 * Gets the array behind the container's <b>&#64;namespaces</b> id.
+	 * 
+	 * @return array
+	 */
 	final public function getNamespaces () : array {
 		
 		$id = "@namespaces";
 		
 		if ($this->getContainer()->has($id)) {
-				
-			return $this->getContainer()->get($id);
+			
+			$namespaces = $this->getContainer()->get($id);
+			
+			return is_array($namespaces) ? $namespaces : [];
 				
 		}
 		
@@ -74,131 +70,42 @@ class App extends \Slim\App {
 	}
 	
 	
-	
-	
-	private function init () {
-		
-		
-		$this->loadAllNamespaces($this->getNamespaces());
-		
-// 		if ($this->getContainer()->has("settings")) {
-			
-// 			$settings = $this->getContainer()->get("settings");
-			
-// 			if (isset($settings["namespaces"]) && is_array($settings["namespaces"])) {
-				
-// 				$namespaces = $settings["namespaces"];
-						
-// 				$this->loadAllNamespaces($namespaces);
-							
-// 			}
-			
-// 		}
-		
-	}
-	
 	/**
+	 * Loads a given class.
 	 * 
-	 * @param string $controller
+	 * @param string $controller The given class name.
 	 */
-	public function load (string $controller) {
+	public function load (string $className) {
 		
-		$reflector = Reflections::reflectionClassOf($controller);
+		$class = Reflections::reflectionClassOf($className);
 		
-		$ann = AbstractDelegate::AnnotationReader()->getClassAnnotation($reflector, Group::class);
+		$group = Annotations::Group($class);
 		
-		if ($ann instanceof Group) {
+		if ($group->isPresent()) {
 			
-// 			var_dump($delegate);
+			/**
+			 * 
+			 * @var Group $group
+			 */
+			$group = $group->get();
 			
-			$this->group($ann->pattern, new GroupDelegate($controller));
+			return $this->group($group->pattern, new GroupDelegate($className));
 			
 		}
 		
-// 		$route = SlimAnnotations::routeOf($class);
-		
-		
-// 		if ($route instanceof Route) {
-			
-// 			$pattern = !empty($route->pattern) ? $route->pattern : "/";
-		
-// 			$this->group($pattern, new Delegate($controller));
-			
-// 			$reflectionMethods = Reflections::publicMethodsOf($class);
-			
-// 			$group = $this->group($pattern, function()use($reflectionMethods){
-				
-// 				foreach ($reflectionMethods as $reflectionMethod) {
-				
-// 					$method = SlimAnnotations::methodOf($reflectionMethod);
-// 					$methodRoute = SlimAnnotations::routeOf($reflectionMethod);
-					
-// 					if ($method) {
-						
-// 						$pattern = strval($methodRoute instanceof Route ? $methodRoute->pattern : "");
-						
-// 						switch ($method->getName()) {
-				
-// 							case Method::GET:
-// 								$route = $this->get($pattern,App::callableName($reflectionMethod));
-// 								break;
-				
-// 							case Method::POST:
-// 								$route = $this->post($pattern,App::callableName($reflectionMethod));
-// 								break;
-				
-// 							case Method::PUT:
-// 								$route = $this->put($pattern,App::callableName($reflectionMethod));
-// 								break;
-				
-// 							case Method::DELETE:
-// 								$route = $this->delete($pattern,App::callableName($reflectionMethod));
-// 								break;
-				
-// 							case Method::OPTIONS:
-// 								$route = $this->options($pattern,App::callableName($reflectionMethod));
-// 								break;
-				
-// 							case Method::ANY:
-// 								$route = $this->any($pattern,App::callableName($reflectionMethod));
-// 								break;
-									
-				
-// 						}
-							
-// 						foreach (SlimAnnotations::middlewaresOf($reflectionMethod) as $middleware) {
-				
-// 							$route->add($middleware->getName());
-				
-// 						}
-							
-// 					}
-				
-// 				}
-				
-// 			});
-
-// 			foreach (SlimAnnotations::middlewaresOf($class) as $middleware) {
-			
-// 				$group->add($middleware->getName());
-			
-// 			}
-				
-			
-			
-// 		}
 		
 	}
 
 	/**
+	 * Loads all given classes.
 	 * 
-	 * @param array $controllers
+	 * @param array $classNames The array of given class names.
 	 */
-	public function loadAll (array $controllers) {
+	public function loadAll (array $classNames) {
 		
-		foreach ($controllers as $controller) {
+		foreach ($classNames as $className) {
 			
-			$this->load($controller);
+			$this->load($className);
 			
 		}
 		
@@ -206,17 +113,14 @@ class App extends \Slim\App {
 	}
 	
 	/**
+	 * Loads all given namespaces.
 	 * 
-	 * @param string $namespace
-	 * @param string $directory
+	 * 
+	 * @param string $namespace The given namespace name
+	 * @param string $directory The path to the given namespace's directory.
 	 */
 	public function loadNamespace (string $namespace, string $directory)  {
-		
-// 		foreach(Finder::create()->in($directory)->files()->name("*.php") as $file) {
-// 			var_dump($file);
-// 		}
-// 		die();
-		
+				
 		$controllers = array_map(function($filename)use($namespace){
 			
 			return $namespace.pathinfo($filename,PATHINFO_FILENAME);
@@ -232,8 +136,11 @@ class App extends \Slim\App {
 	}
 	
 	/**
+	 * Loads all given namespaces.
 	 * 
-	 * @param array $namespaces
+	 * The given namespaces are expected to be an associative array mapping namespace name to directory path. 
+	 * 
+	 * @param array $namespaces The of given namespaces.
 	 */
 	public function loadAllNamespaces (array $namespaces) {
 		
