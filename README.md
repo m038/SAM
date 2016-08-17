@@ -38,7 +38,7 @@ use intrawarez\slim3annotations\App;
 
 $settings = require __DIR__ . "/path/to/settings.php";
 
-$app = App::from($settings);
+$app = App::create($settings);
 
 ...
 
@@ -74,28 +74,22 @@ use intrawarez\slim3annotations\annotations\Group;
 use intrawarez\slim3annotations\annotations\Dependency;
 use intrawarez\slim3annotations\annotations\GET;
 
-/**
- * Group(pattern="/")
- */
+/** Group(pattern="/") */
 class Hello {
 
-/**
-  * @Dependency(id="twig")
-  * @var Twig_Environment
-  */
-  private $twig;
-
- /**
-  *  @GET
-  */   
-  public function foo (ServerRequestInterface $req, ResponseInterface $res, array $args) {
+	/** @Dependency(id="twig") */
+	private $twig;
 	
-    $res->getBody()->write($this->twig->render("index.twig",[
-				"hello" => "World"
-	]));
-	
-	return $res;
-  }
+	/** @GET */   
+	public function foo (ServerRequestInterface $req, ResponseInterface $res, array $args) {
+		
+		$res->getBody()->write($this->twig->render("index.twig",[
+			"hello" => "World"
+		]));
+			
+		return $res;
+		
+	}
 
 }
 
