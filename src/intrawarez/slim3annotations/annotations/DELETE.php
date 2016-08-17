@@ -12,10 +12,6 @@ namespace intrawarez\slim3annotations\annotations;
  */
 class DELETE extends Method implements Annotation {
 	
-	public function __construct () {
-		$this->setName(METHOD::DELETE);
-	}
-	
 }
 
 ?>
