@@ -1,3 +1,7 @@
+[![Latest Stable Version](https://poser.pugx.org/intrawarez/slim3annotations/v/stable)](https://packagist.org/packages/intrawarez/slim3annotations)
+[![License](https://poser.pugx.org/intrawarez/slim3annotations/license)](https://packagist.org/packages/intrawarez/slim3annotations)
+
+
 # [slim3annotations](https://intrawarez.github.io/slim3annotations/)
 Annotations for [Slim3](http://www.slimframework.com/).
 
