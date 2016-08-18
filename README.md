@@ -1,6 +1,12 @@
 # [slim3annotations](https://intrawarez.github.io/slim3annotations/)
 Annotations for [Slim3](http://www.slimframework.com/).
 
+## Features
+
+Annotation markup currently supports:
+- automated ```App::group```-mapping for classes and methods
+- automated Dependency Injection for properties
+
 ## Installation
 
 ```
@@ -9,7 +15,7 @@ composer require intrawarez/slim3annotations
 
 ## Documentation
 
-Documentation can be found [here](http://intrawarez.github.io/sabertooth/docs/).
+Documentation can be found [here](http://intrawarez.github.io/slim3annotations/docs/).
 
 ## Usage
 
