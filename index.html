@@ -26,6 +26,16 @@
 <p>Annotations for <a href="http://www.slimframework.com/">Slim3</a>.</p>
 
 <h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+
+<p>Annotation markup currently supports:</p>
+
+<ul>
+<li>automated <code>App::group</code>-mapping for classes and methods</li>
+<li>automated Dependency Injection for properties</li>
+</ul>
+
+<h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
 
 <pre><code>composer require intrawarez/slim3annotations
@@ -34,7 +44,7 @@
 <h2>
 <a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation</h2>
 
-<p>Documentation can be found <a href="http://intrawarez.github.io/sabertooth/docs/">here</a>.</p>
+<p>Documentation can be found <a href="http://intrawarez.github.io/slim3annotations/docs/">here</a>.</p>
 
 <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
@@ -66,7 +76,7 @@
 <span class="pl-s1"></span>
 <span class="pl-s1"><span class="pl-smi">$settings</span> <span class="pl-k">=</span> <span class="pl-k">require</span> <span class="pl-c1">__DIR__</span> <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">"</span>/path/to/settings.php<span class="pl-pds">"</span></span>;</span>
 <span class="pl-s1"></span>
-<span class="pl-s1"><span class="pl-smi">$app</span> <span class="pl-k">=</span> <span class="pl-c1">App</span><span class="pl-k">::</span>from(<span class="pl-smi">$settings</span>);</span>
+<span class="pl-s1"><span class="pl-smi">$app</span> <span class="pl-k">=</span> <span class="pl-c1">App</span><span class="pl-k">::</span>create(<span class="pl-smi">$settings</span>);</span>
 <span class="pl-s1"></span>
 <span class="pl-s1"><span class="pl-k">...</span></span>
 <span class="pl-s1"></span>
@@ -103,28 +113,22 @@
 <span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">intrawarez\slim3annotations\annotations\Dependency</span>;</span>
 <span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">intrawarez\slim3annotations\annotations\GET</span>;</span>
 <span class="pl-s1"></span>
-<span class="pl-s1"><span class="pl-c">/**</span></span>
-<span class="pl-s1"><span class="pl-c"> * Group(pattern="/")</span></span>
-<span class="pl-s1"><span class="pl-c"> */</span></span>
+<span class="pl-s1"><span class="pl-c">/** Group(pattern="/") */</span></span>
 <span class="pl-s1"><span class="pl-k">class</span> <span class="pl-en">Hello</span> {</span>
 <span class="pl-s1"></span>
-<span class="pl-s1"><span class="pl-c">/**</span></span>
-<span class="pl-s1"><span class="pl-c">  * @Dependency(id="twig")</span></span>
-<span class="pl-s1"><span class="pl-c">  * <span class="pl-k">@var</span> Twig_Environment</span></span>
-<span class="pl-s1"><span class="pl-c">  */</span></span>
-<span class="pl-s1">  <span class="pl-k">private</span> <span class="pl-smi">$twig</span>;</span>
+<span class="pl-s1">    <span class="pl-c">/** @Dependency(id="twig") */</span></span>
+<span class="pl-s1">    <span class="pl-k">private</span> <span class="pl-smi">$twig</span>;</span>
 <span class="pl-s1"></span>
-<span class="pl-s1"> <span class="pl-c">/**</span></span>
-<span class="pl-s1"><span class="pl-c">  *  @GET</span></span>
-<span class="pl-s1"><span class="pl-c">  */</span>   </span>
-<span class="pl-s1">  <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">foo</span> (<span class="pl-c1">ServerRequestInterface</span> <span class="pl-smi">$req</span>, <span class="pl-c1">ResponseInterface</span> <span class="pl-smi">$res</span>, <span class="pl-k">array</span> <span class="pl-smi">$args</span>) {</span>
+<span class="pl-s1">    <span class="pl-c">/** @GET */</span>   </span>
+<span class="pl-s1">    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">foo</span> (<span class="pl-c1">ServerRequestInterface</span> <span class="pl-smi">$req</span>, <span class="pl-c1">ResponseInterface</span> <span class="pl-smi">$res</span>, <span class="pl-k">array</span> <span class="pl-smi">$args</span>) {</span>
 <span class="pl-s1"></span>
-<span class="pl-s1">    <span class="pl-smi">$res</span><span class="pl-k">-&gt;</span>getBody()<span class="pl-k">-&gt;</span>write(<span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">twig</span><span class="pl-k">-&gt;</span>render(<span class="pl-s"><span class="pl-pds">"</span>index.twig<span class="pl-pds">"</span></span>,[</span>
-<span class="pl-s1">                <span class="pl-s"><span class="pl-pds">"</span>hello<span class="pl-pds">"</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">"</span>World<span class="pl-pds">"</span></span></span>
-<span class="pl-s1">    ]));</span>
+<span class="pl-s1">        <span class="pl-smi">$res</span><span class="pl-k">-&gt;</span>getBody()<span class="pl-k">-&gt;</span>write(<span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">twig</span><span class="pl-k">-&gt;</span>render(<span class="pl-s"><span class="pl-pds">"</span>index.twig<span class="pl-pds">"</span></span>,[</span>
+<span class="pl-s1">            <span class="pl-s"><span class="pl-pds">"</span>hello<span class="pl-pds">"</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">"</span>World<span class="pl-pds">"</span></span></span>
+<span class="pl-s1">        ]));</span>
 <span class="pl-s1"></span>
-<span class="pl-s1">    <span class="pl-k">return</span> <span class="pl-smi">$res</span>;</span>
-<span class="pl-s1">  }</span>
+<span class="pl-s1">        <span class="pl-k">return</span> <span class="pl-smi">$res</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">    }</span>
 <span class="pl-s1"></span>
 <span class="pl-s1">}</span>
 <span class="pl-s1"></span></pre></div>
