@@ -10,6 +10,7 @@ use intrawarez\sabertooth\optionals\OptionalInterface;
 
 use function intrawarez\sabertooth\util\repeatables\fn\filter;
 use function intrawarez\sabertooth\callables\predicates\fn\_instanceOf;
+use intrawarez\sabertooth\util\Repeatables;
 
 AnnotationRegistry::registerFile(__DIR__."/Group.php");
 AnnotationRegistry::registerFile(__DIR__."/Middleware.php");
@@ -70,7 +71,8 @@ abstract class Annotations {
 		
 		$annotations = self::Reader()->getClassAnnotations($class);
 		
-		return filter($annotaions, _instanceOf(Middleware::class));
+		// normalize index with array_slice
+		return array_slice(Repeatables::filter($annotations, _instanceOf(Middleware::class)), 0);
 		
 	}
 	
@@ -109,7 +111,7 @@ abstract class Annotations {
 		
 		$annotations = self::Reader()->getMethodAnnotations($method);
 		
-		return filter($annotations, _instanceOf(Middleware::class));
+		return array_slice(Repeatables::filter($annotations, _instanceOf(Middleware::class)), 0);
 		
 	}
 	
