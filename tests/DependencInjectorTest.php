@@ -37,11 +37,9 @@ class DependencyInjectorTest extends TestCase {
 			
 		};
 		
-		$container = new Container($container);
-		
 		$class = new ReflectionClass(DummyInjectionTarget::class);
 		
-		$instance = DependencyInjector::newInstance($class, $container);
+		$instance = DependencyInjector::newInstance($class, new Container($container));
 		
 		$this->assertAttributeInstanceOf(DummyDependency::class, "dependency1", $instance);
 		$this->assertAttributeInstanceOf(DummyDependency::class, "dependency2", $instance);
