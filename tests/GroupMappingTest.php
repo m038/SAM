@@ -91,9 +91,9 @@ class DummyController {
 	
 }
 
-class AppTest extends TestCase {
+class GroupMappingTest extends TestCase {
 	
-	static private function newAppRouter () : RouterInterface {
+	static private function newRouter () : RouterInterface {
 		
 		$app = new App();
 		$app->load(DummyController::class);
@@ -129,7 +129,7 @@ class AppTest extends TestCase {
 	
 	public function testMethod1 () {
 		
-		$router = self::newAppRouter();
+		$router = self::newRouter();
 		
 		$route = $router->lookupRoute("route0");
 		
@@ -139,7 +139,7 @@ class AppTest extends TestCase {
 	
 	public function testMethod2 () {
 		
-		$router = self::newAppRouter();
+		$router = self::newRouter();
 		
 		$route = $router->lookupRoute("route1");
 		
@@ -149,7 +149,7 @@ class AppTest extends TestCase {
 	
 	public function testMethod3 () {
 		
-		$router = self::newAppRouter();
+		$router = self::newRouter();
 		
 		$route = $router->lookupRoute("route2");
 		
@@ -159,7 +159,7 @@ class AppTest extends TestCase {
 	
 	public function testMethod4 () {
 		
-		$router = self::newAppRouter();
+		$router = self::newRouter();
 		
 		$route = $router->lookupRoute("route3");
 		
@@ -169,7 +169,7 @@ class AppTest extends TestCase {
 	
 	public function testMethod5 () {
 		
-		$router = self::newAppRouter();
+		$router = self::newRouter();
 		
 		$route = $router->lookupRoute("route4");
 		
