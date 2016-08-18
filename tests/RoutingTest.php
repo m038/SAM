@@ -91,7 +91,7 @@ class DummyController {
 	
 }
 
-class GroupMappingTest extends TestCase {
+class RoutingTest extends TestCase {
 	
 	static private function newRouter () : RouterInterface {
 		

@@ -158,6 +158,9 @@ class AnnotationsTest extends TestCase {
 		foreach ($results as $result) {
 			$this->assertInstanceOf(Middleware::class, $result);
 		}
+				
+		$this->assertAttributeEquals("Middleware3", "name", $results[0]);
+		$this->assertAttributeEquals("Middleware4", "name", $results[1]);
 		
 	}
 	
