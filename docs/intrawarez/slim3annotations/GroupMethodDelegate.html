@@ -79,13 +79,15 @@
     </div>
 
     <p>    class
-    <strong>GroupMethodDelegate</strong>        extends <a href="../../intrawarez/slim3annotations/AbstractDelegate.html"><abbr title="intrawarez\slim3annotations\AbstractDelegate">AbstractDelegate</abbr></a>        implements
+    <strong>GroupMethodDelegate</strong>        implements
         <a href="../../intrawarez/slim3annotations/DelegateInterface.html"><abbr title="intrawarez\slim3annotations\DelegateInterface">DelegateInterface</abbr></a>
 </p>
 
         
     
 
+            <div class="description">
+            <p>Delegate implementation for group methods.</p>                    </div>
     
     
     
@@ -93,16 +95,6 @@
             <h2>Methods</h2>
 
             <div class="container-fluid underlined">
-                    <div class="row">
-                <div class="col-md-2 type">
-                    static&nbsp;object
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_newInstance">newInstance</a>(<a target="_blank" href="http://php.net/ReflectionClass">ReflectionClass</a> $class, <abbr title="Interop\Container\ContainerInterface">ContainerInterface</abbr> $container)
-        
-                                            <p>Creates a new instance of a given reflection class with injected dependencies from a given container.</p>                </div>
-                <div class="col-md-2"><small>from&nbsp;<a href="../../intrawarez/slim3annotations/AbstractDelegate.html#method_newInstance"><abbr title="intrawarez\slim3annotations\AbstractDelegate">AbstractDelegate</abbr></a></small></div>
-            </div>
                     <div class="row">
                 <div class="col-md-2 type">
                     
@@ -132,53 +124,8 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method_newInstance">
-        <div class="location">in <a href="../../intrawarez/slim3annotations/AbstractDelegate.html#method_newInstance"><abbr title="intrawarez\slim3annotations\AbstractDelegate">AbstractDelegate</abbr></a> at line         line 25</div>
-        <code>final        static            object
-    <strong>newInstance</strong>(<a target="_blank" href="http://php.net/ReflectionClass">ReflectionClass</a> $class, <abbr title="Interop\Container\ContainerInterface">ContainerInterface</abbr> $container)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                    <div class="method-description">
-                                    <p>Creates a new instance of a given reflection class with injected dependencies from a given container.</p>                                </div>
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td><a target="_blank" href="http://php.net/ReflectionClass">ReflectionClass</a></td>
-                <td>$class</td>
-                <td>The given reflection class.</td>
-            </tr>
-                    <tr>
-                <td><abbr title="Interop\Container\ContainerInterface">ContainerInterface</abbr></td>
-                <td>$container</td>
-                <td>The given container.</td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>object</td>
-            <td></td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line         line 17</div>
+        <div class="location">at line         line 31</div>
         <code>                    
     <strong>__construct</strong>(<abbr title="intrawarez\slim3annotations\string">string</abbr> $className, <abbr title="intrawarez\slim3annotations\string">string</abbr> $methodName)
         </code>
@@ -212,7 +159,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getCallable">
-        <div class="location">at line         line 24</div>
+        <div class="location">at line         line 43</div>
         <code>                    callable
     <strong>getCallable</strong>(<abbr title="Interop\Container\ContainerInterface">ContainerInterface</abbr> $container)
         </code>
@@ -244,6 +191,15 @@
 
             
             
+                            <h4>See also</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>\intrawarez\slim3annotations\DelegateInterface::getCallable()</td>
+                <td></td>
+            </tr>
+            </table>
+
                     </div>
     </div>
 
