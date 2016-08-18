@@ -1,0 +1,22 @@
+
+
+Code Coverage Report:    
+  2016-08-18 05:02:18    
+                         
+ Summary:                
+  Classes: 75.00% (12/16)
+  Methods: 57.14% (12/21)
+  Lines:   73.91% (68/92)
+
+\intrawarez\slim3annotations::App
+  Methods:  14.29% ( 1/ 7)   Lines:  60.87% ( 14/ 23)
+\intrawarez\slim3annotations::CallableResolver
+  Methods:  50.00% ( 1/ 2)   Lines:  83.33% (  5/  6)
+\intrawarez\slim3annotations::DependencyInjector
+  Methods:   0.00% ( 0/ 1)   Lines:  92.31% ( 12/ 13)
+\intrawarez\slim3annotations::GroupDelegate
+  Methods: 100.00% ( 3/ 3)   Lines: 100.00% ( 18/ 18)
+\intrawarez\slim3annotations::GroupMethodDelegate
+  Methods:  50.00% ( 1/ 2)   Lines:  85.71% (  6/  7)
+\intrawarez\slim3annotations\annotations::Annotations
+  Methods: 100.00% ( 6/ 6)   Lines: 100.00% ( 13/ 13)

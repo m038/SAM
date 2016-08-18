@@ -37,7 +37,7 @@ abstract class Annotations {
 	 * 
 	 * @return AnnotationReader
 	 */
-	static final public function Reader () : AnnotationReader {
+	static final private function Reader () : AnnotationReader {
 	
 		if (is_null(self::$reader)) {
 	
