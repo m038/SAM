@@ -22,7 +22,8 @@
     "require-dev": {
     
         "phpunit/phpunit": "5.4.*",
-		"sami/sami": "*"
+	"sami/sami": "*",
+	"satooshi/php-coveralls": "*"
 		
     },
     "require": {

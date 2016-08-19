@@ -69,7 +69,6 @@ class App extends \Slim\App {
 		
 	}
 	
-	
 	/**
 	 * Loads a given class.
 	 * 
