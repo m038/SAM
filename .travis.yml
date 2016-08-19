@@ -6,6 +6,7 @@ php:
   - 7.0
 
 before_script:
+  - composer require satooshi/php-coveralls:1.* -n ;
   - composer install -n ;
 
 script:
@@ -13,4 +14,4 @@ script:
   - phpunit ;
 
 after_script:
-  -  php vendor/bin/coveralls --coverage_clover=clover.xml -v ;
+  - php vendor/bin/coveralls --coverage_clover=clover.xml -v ;
