@@ -6,6 +6,7 @@ class GroupMethodDelegateTest extends TestCase {
 	
 	public function test () {
 		// suppresses phpunit warning
+		$this->assertTrue(true);
 	}
 	
 }
