@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/IntraWarez/slim3annotations.svg?branch=master)](https://travis-ci.org/IntraWarez/slim3annotations)
+[![Coverage Status](https://coveralls.io/repos/github/IntraWarez/slim3annotations/badge.svg?branch=master)](https://coveralls.io/github/IntraWarez/slim3annotations?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/intrawarez/slim3annotations/v/stable)](https://packagist.org/packages/intrawarez/slim3annotations)
 [![License](https://poser.pugx.org/intrawarez/slim3annotations/license)](https://packagist.org/packages/intrawarez/slim3annotations)
 
