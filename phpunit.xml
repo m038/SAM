@@ -18,6 +18,7 @@
         </whitelist>
     </filter>
 
+<!--
     <logging>
         <log type="coverage-html" target="./coverage" charset="UTF-8"
             yui="true" highlight="true"
@@ -25,5 +26,6 @@
         <log type="coverage-text" target="./coverage.txt" charset="UTF-8"/>
         <log type="coverage-clover" target="./clover.xml" charset="UTF-8"/>
     </logging>
+-->
 
 </phpunit>
