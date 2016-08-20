@@ -26,7 +26,7 @@ abstract class DependencyInjector {
 		
 		if ($class->getConstructor()) {
 			
-			$instance = $class->newInstanceArgs($container);
+			$instance = $class->newInstance($container);
 			
 		}
 		else {
