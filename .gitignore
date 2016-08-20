@@ -1,14 +1,7 @@
-.settings
 .project
 .buildpath
+.settings
 
-vendor
+src
 cache
-
-composer.phar
-composer.lock
-
-*.phar
-
-*.md.html
-test.php
+sami.phar
