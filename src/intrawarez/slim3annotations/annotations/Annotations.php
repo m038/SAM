@@ -10,7 +10,6 @@ use intrawarez\sabertooth\optionals\OptionalInterface;
 
 use function intrawarez\sabertooth\util\repeatables\fn\filter;
 use function intrawarez\sabertooth\callables\predicates\fn\_instanceOf;
-use intrawarez\sabertooth\util\Repeatables;
 
 abstract class Annotations {
 	
@@ -73,7 +72,7 @@ abstract class Annotations {
 		$annotations = self::Reader()->getClassAnnotations($class);
 		
 		// normalize index with array_slice
-		return array_slice(Repeatables::filter($annotations, _instanceOf(Middleware::class)), 0);
+		return array_slice(filter($annotations, _instanceOf(Middleware::class)), 0);
 		
 	}
 	
@@ -112,7 +111,7 @@ abstract class Annotations {
 		
 		$annotations = self::Reader()->getMethodAnnotations($method);
 		
-		return array_slice(Repeatables::filter($annotations, _instanceOf(Middleware::class)), 0);
+		return array_slice(filter($annotations, _instanceOf(Middleware::class)), 0);
 		
 	}
 	
