@@ -9,6 +9,7 @@ use intrawarez\slim3annotations\annotations\Method;
 use intrawarez\slim3annotations\annotations\GET;
 use intrawarez\slim3annotations\annotations\Annotations;
 use intrawarez\sabertooth\optionals\OptionalInterface;
+use Doctrine\Common\Annotations\AnnotationRegistry;
 
 class DummyNotAnnotatedClass {
 	
@@ -60,7 +61,10 @@ class AnnotationsTest extends TestCase {
 		
 	}
 	
+	
+	
 	/**
+	 * @covers Doctrine\Common\Annotations\AnnotationRegistry::registerFile
 	 * @covers \intrawarez\slim3annotations\annotations\Annotations::Reader
 	 * @covers \intrawarez\slim3annotations\annotations\Annotations::Group
 	 */
