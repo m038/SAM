@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>intrawarez\slim3annotations\App | API</title>
+
+            <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/sami.css">
+        <script src="../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/typeahead.min.js"></script>
+        <script src="../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:intrawarez_slim3annotations_App" data-root-path="../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <form id="search-form" action="../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../index.html">API</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../classes.html">Classes</a></li>
+                                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../traits.html">Traits</a></li>
+                    <li><a href="../../doc-index.html">Index</a></li>
+                    <li><a href="../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                                                            <li><a href="../../intrawarez.html">intrawarez</a></li>
+                                        <li><a href="../../intrawarez/slim3annotations.html">slim3annotations</a></li>
+    
+                <li>App</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            App
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>App</strong>        extends <abbr title="Slim\App">App</abbr>
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>An extension of \Slim\App which loads its handlers automatically,
+depending on annotation markup.</p>                    </div>
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;<a href="../../intrawarez/slim3annotations/App.html"><abbr title="intrawarez\slim3annotations\App">App</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_create">create</a>(array|<abbr title="Interop\Container\ContainerInterface">ContainerInterface</abbr> $container)
+        
+                                            <p>Creates a new App instances.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(array|<abbr title="Interop\Container\ContainerInterface">ContainerInterface</abbr> $container = array())
+        
+                                            <p>Constructs a new App instance from a given container.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getNamespaces">getNamespaces</a>()
+        
+                                            <p>Gets the array behind the container's <b>&#64;namespaces</b> id.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_load">load</a>(<abbr title="intrawarez\slim3annotations\string">string</abbr> $className)
+        
+                                            <p>Loads a given class.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_loadAll">loadAll</a>(array $classNames)
+        
+                                            <p>Loads all given classes.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_loadNamespace">loadNamespace</a>(<abbr title="intrawarez\slim3annotations\string">string</abbr> $namespace, <abbr title="intrawarez\slim3annotations\string">string</abbr> $directory)
+        
+                                            <p>Loads all given namespaces.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_loadAllNamespaces">loadAllNamespaces</a>(array $namespaces)
+        
+                                            <p>Loads all given namespaces.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method_create">
+        <div class="location">at line         line 26</div>
+        <code>        static            <a href="../../intrawarez/slim3annotations/App.html"><abbr title="intrawarez\slim3annotations\App">App</abbr></a>
+    <strong>create</strong>(array|<abbr title="Interop\Container\ContainerInterface">ContainerInterface</abbr> $container)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Creates a new App instances.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array|<abbr title="Interop\Container\ContainerInterface">ContainerInterface</abbr></td>
+                <td>$container</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../intrawarez/slim3annotations/App.html"><abbr title="intrawarez\slim3annotations\App">App</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at line         line 37</div>
+        <code>                    
+    <strong>__construct</strong>(array|<abbr title="Interop\Container\ContainerInterface">ContainerInterface</abbr> $container = array())
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Constructs a new App instance from a given container.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array|<abbr title="Interop\Container\ContainerInterface">ContainerInterface</abbr></td>
+                <td>$container</td>
+                <td>The given container.</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getNamespaces">
+        <div class="location">at line         line 56</div>
+        <code>final                    array
+    <strong>getNamespaces</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Gets the array behind the container's <b>&#64;namespaces</b> id.</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_load">
+        <div class="location">at line         line 77</div>
+        <code>                    
+    <strong>load</strong>(<abbr title="intrawarez\slim3annotations\string">string</abbr> $className)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Loads a given class.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="intrawarez\slim3annotations\string">string</abbr></td>
+                <td>$className</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_loadAll">
+        <div class="location">at line         line 103</div>
+        <code>                    
+    <strong>loadAll</strong>(array $classNames)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Loads all given classes.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$classNames</td>
+                <td>The array of given class names.</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_loadNamespace">
+        <div class="location">at line         line 121</div>
+        <code>                    
+    <strong>loadNamespace</strong>(<abbr title="intrawarez\slim3annotations\string">string</abbr> $namespace, <abbr title="intrawarez\slim3annotations\string">string</abbr> $directory)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Loads all given namespaces.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="intrawarez\slim3annotations\string">string</abbr></td>
+                <td>$namespace</td>
+                <td>The given namespace name</td>
+            </tr>
+                    <tr>
+                <td><abbr title="intrawarez\slim3annotations\string">string</abbr></td>
+                <td>$directory</td>
+                <td>The path to the given namespace's directory.</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_loadAllNamespaces">
+        <div class="location">at line         line 144</div>
+        <code>                    
+    <strong>loadAllNamespaces</strong>(array $namespaces)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Loads all given namespaces.</p>                    <p>The given namespaces are expected to be an associative array mapping namespace name to directory path.</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$namespaces</td>
+                <td>The of given namespaces.</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>
