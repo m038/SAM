@@ -20,6 +20,7 @@ AnnotationRegistry::registerFile(__DIR__."/GET.php");
 AnnotationRegistry::registerFile(__DIR__."/POST.php");
 AnnotationRegistry::registerFile(__DIR__."/PUT.php");
 AnnotationRegistry::registerFile(__DIR__."/DELETE.php");
+AnnotationRegistry::registerFile(__DIR__."/PATCH.php");
 AnnotationRegistry::registerFile(__DIR__."/OPTIONS.php");
 AnnotationRegistry::registerFile(__DIR__."/ANY.php");
 
