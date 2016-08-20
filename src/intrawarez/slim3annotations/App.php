@@ -23,7 +23,7 @@ class App extends \Slim\App {
 	 * @param array|\Interop\Container\ContainerInterface $container
 	 * @return App
 	 */
-	static public function create ($container) : App {
+	static public function create ($container = []) : App {
 		
 		return new App($container);
 		

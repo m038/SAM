@@ -16,6 +16,7 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 use Slim\Interfaces\RouteInterface;
 use Slim\Interfaces\RouterInterface;
+use intrawarez\slim3annotations\CallableResolver;
 
 const METHOD1 = 661;
 const METHOD2 = 662;
@@ -91,7 +92,7 @@ class DummyController {
 	
 }
 
-class RoutingTest extends TestCase {
+class AppTest extends TestCase {
 	
 	static private function newRouter () : RouterInterface {
 		
@@ -127,7 +128,49 @@ class RoutingTest extends TestCase {
 		
 	}
 	
-	public function testMethod1 () {
+	public function testCreate () {
+		
+		$app = App::create();
+		
+		$container = $app->getContainer();
+		
+		$this->assertInstanceOf(CallableResolver::class, $container->get("callableResolver"));
+		
+	}
+	
+	public function testConstruct () {
+
+		$app = new App();
+		
+		$container = $app->getContainer();
+		
+		$this->assertInstanceOf(CallableResolver::class, $container->get("callableResolver"));
+		
+	}
+	
+	public function testGetNamespaces () {
+		
+		$app = App::create();
+		
+		$this->assertInternalType("array", $app->getNamespaces());
+		$this->assertEquals([], $app->getNamespaces());
+		
+		$namespaces = [
+				"" => __DIR__
+		];
+		
+		$container = [
+				"@namespaces" => $namespaces
+		];
+		
+		$app = App::create($container);
+		
+		$this->assertInternalType("array", $app->getNamespaces());
+		$this->assertEquals($namespaces, $app->getNamespaces());
+		
+	}
+	
+	public function testLoad () {
 		
 		$router = self::newRouter();
 		
@@ -135,47 +178,24 @@ class RoutingTest extends TestCase {
 		
 		$this->assertRoute($route, "GET", "/dummy", METHOD1);
 		
-	}
-	
-	public function testMethod2 () {
-		
-		$router = self::newRouter();
-		
 		$route = $router->lookupRoute("route1");
 		
 		$this->assertRoute($route, "GET", "/dummy/foo", METHOD2);
-		
-	}
-	
-	public function testMethod3 () {
-		
-		$router = self::newRouter();
 		
 		$route = $router->lookupRoute("route2");
 		
 		$this->assertRoute($route, "POST", "/dummy", METHOD3);
 		
-	}
-	
-	public function testMethod4 () {
-		
-		$router = self::newRouter();
-		
 		$route = $router->lookupRoute("route3");
 		
 		$this->assertRoute($route, "PUT", "/dummy", METHOD4);
-		
-	}
-	
-	public function testMethod5 () {
-		
-		$router = self::newRouter();
 		
 		$route = $router->lookupRoute("route4");
 		
 		$this->assertRoute($route, "DELETE", "/dummy", METHOD5);
 		
 	}
+	
 	
 }
 
