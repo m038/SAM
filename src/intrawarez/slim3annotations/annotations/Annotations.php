@@ -12,18 +12,6 @@ use function intrawarez\sabertooth\util\repeatables\fn\filter;
 use function intrawarez\sabertooth\callables\predicates\fn\_instanceOf;
 use intrawarez\sabertooth\util\Repeatables;
 
-AnnotationRegistry::registerFile(__DIR__."/Group.php");
-AnnotationRegistry::registerFile(__DIR__."/Middleware.php");
-AnnotationRegistry::registerFile(__DIR__."/Dependency.php");
-AnnotationRegistry::registerFile(__DIR__."/Group.php");
-AnnotationRegistry::registerFile(__DIR__."/GET.php");
-AnnotationRegistry::registerFile(__DIR__."/POST.php");
-AnnotationRegistry::registerFile(__DIR__."/PUT.php");
-AnnotationRegistry::registerFile(__DIR__."/DELETE.php");
-AnnotationRegistry::registerFile(__DIR__."/PATCH.php");
-AnnotationRegistry::registerFile(__DIR__."/OPTIONS.php");
-AnnotationRegistry::registerFile(__DIR__."/ANY.php");
-
 abstract class Annotations {
 	
 	/**
@@ -41,7 +29,19 @@ abstract class Annotations {
 	static final private function Reader () : AnnotationReader {
 	
 		if (is_null(self::$reader)) {
-	
+			
+			AnnotationRegistry::registerFile(__DIR__."/Group.php");
+			AnnotationRegistry::registerFile(__DIR__."/Middleware.php");
+			AnnotationRegistry::registerFile(__DIR__."/Dependency.php");
+			AnnotationRegistry::registerFile(__DIR__."/Group.php");
+			AnnotationRegistry::registerFile(__DIR__."/GET.php");
+			AnnotationRegistry::registerFile(__DIR__."/POST.php");
+			AnnotationRegistry::registerFile(__DIR__."/PUT.php");
+			AnnotationRegistry::registerFile(__DIR__."/DELETE.php");
+			AnnotationRegistry::registerFile(__DIR__."/PATCH.php");
+			AnnotationRegistry::registerFile(__DIR__."/OPTIONS.php");
+			AnnotationRegistry::registerFile(__DIR__."/ANY.php");
+			
 			self::$reader = new AnnotationReader();
 	
 		}
