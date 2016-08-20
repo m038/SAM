@@ -1,7 +1,5 @@
 <?php
 
-include_once __DIR__."/vendor/autoload.php";
-
 $src = __DIR__."/src";
 $out = __DIR__."/docs";
 $csh = __DIR__."/cache";
