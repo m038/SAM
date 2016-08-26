@@ -3,7 +3,7 @@ return [
     
     "@namespaces" => [
         
-        "intrawarez\\slim3annotations\\example\\controllers\\" => __DIR__ . "/controllers"
+        "intrawarez\\slimannotations\\example\\controllers\\" => __DIR__ . "/controllers"
     ]
     ,
     
