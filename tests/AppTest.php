@@ -2,12 +2,13 @@
 
 use PHPUnit\Framework\TestCase;
 
-use intrawarez\slim3annotations\annotations\Group;
-use intrawarez\slim3annotations\annotations\GET;
-use intrawarez\slim3annotations\annotations\POST;
-use intrawarez\slim3annotations\annotations\PUT;
-use intrawarez\slim3annotations\annotations\DELETE;
-use intrawarez\slim3annotations\App;
+use intrawarez\slimannotations\annotations\Group;
+use intrawarez\slimannotations\annotations\GET;
+use intrawarez\slimannotations\annotations\POST;
+use intrawarez\slimannotations\annotations\PUT;
+use intrawarez\slimannotations\annotations\DELETE;
+use intrawarez\slimannotations\CallableResolver;
+use intrawarez\slimannotations\App;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\Http\Body;
@@ -16,7 +17,6 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 use Slim\Interfaces\RouteInterface;
 use Slim\Interfaces\RouterInterface;
-use intrawarez\slim3annotations\CallableResolver;
 
 const METHOD1 = 661;
 const METHOD2 = 662;

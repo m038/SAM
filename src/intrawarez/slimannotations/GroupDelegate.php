@@ -1,16 +1,16 @@
 <?php
 
-namespace intrawarez\slim3annotations;
+namespace intrawarez\slimannotations;
 
 use Interop\Container\ContainerInterface;
-use intrawarez\slim3annotations\annotations\Method;
-use intrawarez\slim3annotations\annotations\GET;
-use intrawarez\slim3annotations\annotations\POST;
-use intrawarez\slim3annotations\annotations\PUT;
-use intrawarez\slim3annotations\annotations\DELETE;
-use intrawarez\slim3annotations\annotations\OPTIONS;
-use intrawarez\slim3annotations\annotations\ANY;
-use intrawarez\slim3annotations\annotations\Annotations;
+use intrawarez\slimannotations\annotations\Method;
+use intrawarez\slimannotations\annotations\GET;
+use intrawarez\slimannotations\annotations\POST;
+use intrawarez\slimannotations\annotations\PUT;
+use intrawarez\slimannotations\annotations\DELETE;
+use intrawarez\slimannotations\annotations\OPTIONS;
+use intrawarez\slimannotations\annotations\ANY;
+use intrawarez\slimannotations\annotations\Annotations;
 
 /**
  * Delegate implementation for Slim groups.

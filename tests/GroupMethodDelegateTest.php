@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use intrawarez\slim3annotations\GroupMethodDelegate;
+use intrawarez\slimannotations\GroupMethodDelegate;
 use Slim\Container;
 
 class GroupMethodDelegateTest extends TestCase {

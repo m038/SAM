@@ -1,11 +1,11 @@
 <?php
 
-namespace intrawarez\slim3annotations;
+namespace intrawarez\slimannotations;
 
 use Interop\Container\ContainerInterface;
 use intrawarez\sabertooth\reflection\Reflections;
-use intrawarez\slim3annotations\annotations\Group;
-use intrawarez\slim3annotations\annotations\Annotations;
+use intrawarez\slimannotations\annotations\Group;
+use intrawarez\slimannotations\annotations\Annotations;
 
 
 /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace intrawarez\slim3annotations;
+namespace intrawarez\slimannotations;
 
 
 use Slim\Interfaces\CallableResolverInterface;

@@ -2,12 +2,12 @@
 
 use PHPUnit\Framework\TestCase;
 
-use intrawarez\slim3annotations\annotations\Group;
-use intrawarez\slim3annotations\annotations\Middleware;
-use intrawarez\slim3annotations\annotations\Dependency;
-use intrawarez\slim3annotations\annotations\Method;
-use intrawarez\slim3annotations\annotations\GET;
-use intrawarez\slim3annotations\annotations\Annotations;
+use intrawarez\slimannotations\annotations\Group;
+use intrawarez\slimannotations\annotations\Middleware;
+use intrawarez\slimannotations\annotations\Dependency;
+use intrawarez\slimannotations\annotations\Method;
+use intrawarez\slimannotations\annotations\GET;
+use intrawarez\slimannotations\annotations\Annotations;
 use intrawarez\sabertooth\optionals\OptionalInterface;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 

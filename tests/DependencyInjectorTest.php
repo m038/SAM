@@ -1,9 +1,9 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use intrawarez\slim3annotations\annotations\Dependency;
+use intrawarez\slimannotations\annotations\Dependency;
+use intrawarez\slimannotations\DependencyInjector;
 use Slim\Container;
-use intrawarez\slim3annotations\DependencyInjector;
 
 class DummyDependency {}
 

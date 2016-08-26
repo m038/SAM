@@ -1,6 +1,6 @@
 <?php
 
-namespace intrawarez\slim3annotations\example\controllers;
+namespace intrawarez\slimannotations\example\controllers;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;

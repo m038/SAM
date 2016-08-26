@@ -1,10 +1,10 @@
 <?php
 
-namespace intrawarez\slim3annotations;
+namespace intrawarez\slimannotations;
 
 use Interop\Container\ContainerInterface;
-use intrawarez\slim3annotations\annotations\Annotations;
-use intrawarez\slim3annotations\annotations\Dependency;
+use intrawarez\slimannotations\annotations\Annotations;
+use intrawarez\slimannotations\annotations\Dependency;
 
 
 /**

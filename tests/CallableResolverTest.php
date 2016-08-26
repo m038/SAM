@@ -1,8 +1,8 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use intrawarez\slim3annotations\CallableResolver;
-use intrawarez\slim3annotations\GroupMethodDelegate;
+use intrawarez\slimannotations\CallableResolver;
+use intrawarez\slimannotations\GroupMethodDelegate;
 use Slim\Container;
 
 class CallableResolverTest extends TestCase {

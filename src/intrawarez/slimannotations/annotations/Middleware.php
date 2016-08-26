@@ -1,6 +1,6 @@
 <?php
 
-namespace intrawarez\slim3annotations\annotations;
+namespace intrawarez\slimannotations\annotations;
 
 /**
  * 

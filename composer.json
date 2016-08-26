@@ -1,7 +1,7 @@
 {
-    "name": "intrawarez/slim3annotations",
+    "name": "intrawarez/slim-annotations",
     "description": "Annotations for Slim3",
-    "homepage": "https://intrawarez.github.io/slim3annotations/",
+    "homepage": "https://intrawarez.github.io/slim-annotations/",
     "authors": [
         {
             "name": "Maximilian Meffert",

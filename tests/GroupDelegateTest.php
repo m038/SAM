@@ -1,11 +1,11 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use intrawarez\slim3annotations\GroupDelegate;
-use intrawarez\slim3annotations\annotations\GET;
+use intrawarez\slimannotations\GroupDelegate;
+use intrawarez\slimannotations\annotations\GET;
+use intrawarez\slimannotations\App;
+use intrawarez\slimannotations\GroupMethodDelegate;
 use Slim\Container;
-use intrawarez\slim3annotations\App;
-use intrawarez\slim3annotations\GroupMethodDelegate;
 
 class DummyGroupDelegateTarget {
 	

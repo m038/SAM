@@ -23,7 +23,7 @@ $baseDir = __DIR__ . "/../src/intrawarez/slim3annotations/example";
 $settings = require "$baseDir/settings.php";
 
 // Instantiate the app
-$app = new \intrawarez\slim3annotations\App($settings);
+$app = new \intrawarez\slimannotations\App($settings);
 
 // Set up dependencies
 require "$baseDir/dependencies.php";
