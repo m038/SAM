@@ -26,12 +26,7 @@ class AnnotationsTest extends TestCase
     {
         return new \ReflectionClass(DummyAnnotatedClass::class);
     }
-
-    /**
-     * @covers Doctrine\Common\Annotations\AnnotationRegistry::registerFile
-     * @covers \intrawarez\slim3annotations\annotations\Annotations::Reader
-     * @covers \intrawarez\slim3annotations\annotations\Annotations::Group
-     */
+        
     public function testGroup()
     {
         $result = Annotations::Group(self::newNotAnnotatedClass());
@@ -52,10 +47,6 @@ class AnnotationsTest extends TestCase
         $this->assertAttributeContains("/dummy", "pattern", $group);
     }
 
-    /**
-     * @covers \intrawarez\slim3annotations\annotations\Annotations::Reader
-     * @covers \intrawarez\slim3annotations\annotations\Annotations::GroupMiddlewares
-     */
     public function testGroupeMiddlewares()
     {
         $results = Annotations::GroupMiddlewares(self::newNotAnnotatedClass());
@@ -76,10 +67,6 @@ class AnnotationsTest extends TestCase
         $this->assertAttributeEquals("Middleware2", "name", $results[1]);
     }
 
-    /**
-     * @covers \intrawarez\slim3annotations\annotations\Annotations::Reader
-     * @covers \intrawarez\slim3annotations\annotations\Annotations::Dependency
-     */
     public function testDependency()
     {
         $result = Annotations::Dependency(self::newNotAnnotatedClass()->getProperty("property"));
@@ -100,10 +87,6 @@ class AnnotationsTest extends TestCase
         $this->assertAttributeContains("dep", "id", $dependency);
     }
 
-    /**
-     * @covers \intrawarez\slim3annotations\annotations\Annotations::Reader
-     * @covers \intrawarez\slim3annotations\annotations\Annotations::Method
-     */
     public function testMethod()
     {
         $result = Annotations::Method(self::newNotAnnotatedClass()->getMethod("method"));
@@ -121,10 +104,6 @@ class AnnotationsTest extends TestCase
         $this->assertInstanceOf(GET::class, $result->get());
     }
 
-    /**
-     * @covers \intrawarez\slim3annotations\annotations\Annotations::Reader
-     * @covers \intrawarez\slim3annotations\annotations\Annotations::MethodMiddlewares
-     */
     public function testMethodMiddlewares()
     {
         $results = Annotations::MethodMiddlewares(self::newNotAnnotatedClass()->getMethod("method"));
