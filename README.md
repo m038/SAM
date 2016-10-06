@@ -1,9 +1,11 @@
-[![Latest Stable Version](https://poser.pugx.org/intrawarez/slim3annotations/v/stable)](https://packagist.org/packages/intrawarez/slim3annotations)
-[![License](https://poser.pugx.org/intrawarez/slim3annotations/license)](https://packagist.org/packages/intrawarez/slim3annotations)
+[![Build Status](https://travis-ci.org/IntraWarez/slim-annotations.svg?branch=master)](https://travis-ci.org/IntraWarez/slim-annotations)
+[![Coverage Status](https://coveralls.io/repos/github/IntraWarez/slim-annotations/badge.svg?branch=master)](https://coveralls.io/github/IntraWarez/slim-annotations?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/intrawarez/slim-annotations/v/stable)](https://packagist.org/packages/intrawarez/slim-annotations)
+[![License](https://poser.pugx.org/intrawarez/slim-annotations/license)](https://packagist.org/packages/intrawarez/slim-annotations)
 
 
-# [slim3annotations](https://intrawarez.github.io/slim3annotations/)
-Annotations for [Slim3](http://www.slimframework.com/).
+# [slim-annotations](https://intrawarez.github.io/slim-annotations/)
+Annotations for [Slim](http://www.slimframework.com/).
 
 ## Features
 
@@ -14,12 +16,12 @@ Annotation markup currently supports:
 ## Installation
 
 ```
-composer require intrawarez/slim3annotations
+composer require intrawarez/slim-annotations
 ```
 
 ## Documentation
 
-Documentation can be found [here](http://intrawarez.github.io/slim3annotations/docs/).
+Documentation can be found [here](http://intrawarez.github.io/slim-annotations/docs/).
 
 ## Usage
 
@@ -33,7 +35,7 @@ return [
 
 		"@namespaces" => [
 				
-				"intrawarez\\slim3annotations\\example\\controllers\\" => __DIR__."/controllers"
+				"intrawarez\\slimannotations\\example\\controllers\\" => __DIR__."/controllers"
 				
 		],
 		
@@ -44,7 +46,7 @@ return [
 
 #### index.php
 ```php
-use intrawarez\slim3annotations\App;
+use intrawarez\slimannotations\App;
 
 $settings = require __DIR__ . "/path/to/settings.php";
 
@@ -80,9 +82,9 @@ $container["twig"] = function (Slim\Container $c) {
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-use intrawarez\slim3annotations\annotations\Group;
-use intrawarez\slim3annotations\annotations\Dependency;
-use intrawarez\slim3annotations\annotations\GET;
+use intrawarez\slimannotations\annotations\Group;
+use intrawarez\slimannotations\annotations\Dependency;
+use intrawarez\slimannotations\annotations\GET;
 
 /** Group(pattern="/") */
 class Hello {
