@@ -20,18 +20,12 @@
     "minimum-stability": "dev",
     "prefer-stable" : true,
     "require-dev": {
-<<<<<<< HEAD
     
         "phpunit/phpunit": "5.5.*",
         "squizlabs/php_codesniffer": "^2.6",
 		"phpmd/phpmd": "^2.4",
 		"phpmetrics/phpmetrics": "^1.10"
-		"sami/sami": "*"
 		
-=======
-        "phpunit/phpunit": "5.4.*",
-        "squizlabs/php_codesniffer": "^2.6"
->>>>>>> 5ffdbadce2f243aee20850e24e715617942725a1
     },
     "require": {
     	
