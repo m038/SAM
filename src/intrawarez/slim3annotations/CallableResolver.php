@@ -2,7 +2,6 @@
 
 namespace intrawarez\slim3annotations;
 
-
 use Slim\Interfaces\CallableResolverInterface;
 use Interop\Container\ContainerInterface;
 

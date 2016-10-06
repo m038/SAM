@@ -6,7 +6,7 @@ use Interop\Container\ContainerInterface;
 use intrawarez\sabertooth\reflection\Reflections;
 use intrawarez\slim3annotations\annotations\Group;
 use intrawarez\slim3annotations\annotations\Annotations;
-
+use Slim\App as SlimApp;
 
 /**
  * An extension of \Slim\App which loads its handlers automatically,
@@ -15,7 +15,7 @@ use intrawarez\slim3annotations\annotations\Annotations;
  * @author maxmeffert
  *
  */
-class App extends \Slim\App {
+class App extends SlimApp {
 	
 	
 	/**
