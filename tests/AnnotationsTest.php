@@ -5,7 +5,7 @@ use PHPUnit\Framework\TestCase;
 use intrawarez\slimannotations\annotations\Group;
 use intrawarez\slimannotations\annotations\Middleware;
 use intrawarez\slimannotations\annotations\Dependency;
-use intrawarez\slimannotations\annotations\Method;
+use intrawarez\slimannotations\annotations\HttpMethod;
 use intrawarez\slimannotations\annotations\GET;
 use intrawarez\slimannotations\annotations\Annotations;
 use intrawarez\sabertooth\optionals\OptionalInterface;
@@ -100,7 +100,7 @@ class AnnotationsTest extends TestCase
         $this->assertInstanceOf(OptionalInterface::class, $result);
         $this->assertTrue($result->isPresent());
         $this->assertFalse($result->isAbsent());
-        $this->assertInstanceOf(Method::class, $result->get());
+        $this->assertInstanceOf(HttpMethod::class, $result->get());
         $this->assertInstanceOf(GET::class, $result->get());
     }
 

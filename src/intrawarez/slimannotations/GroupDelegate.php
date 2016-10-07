@@ -2,7 +2,7 @@
 namespace intrawarez\slimannotations;
 
 use Interop\Container\ContainerInterface;
-use intrawarez\slimannotations\annotations\Method;
+use intrawarez\slimannotations\annotations\HttpMethod;
 use intrawarez\slimannotations\annotations\GET;
 use intrawarez\slimannotations\annotations\POST;
 use intrawarez\slimannotations\annotations\PUT;
