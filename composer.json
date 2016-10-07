@@ -28,7 +28,7 @@
         	"src/intrawarez/slimannotations/annotations/PUT.php",
         	"src/intrawarez/slimannotations/annotations/DELETE.php",
         	"src/intrawarez/slimannotations/annotations/OPTIONS.php",
-        	"src/intrawarez/slimannotations/annotations/POST.php",
+        	"src/intrawarez/slimannotations/annotations/PATCH.php",
         	"src/intrawarez/slimannotations/annotations/ANY.php"
         ]
     },
