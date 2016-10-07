@@ -15,7 +15,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 
 session_start();
 
-$baseDir = __DIR__ . "/../src/intrawarez/slim3annotations/example";
+$baseDir = __DIR__ . "/../src/intrawarez/slimannotations/example";
 
 $settings = require "$baseDir/settings.php";
 

@@ -3,13 +3,11 @@ namespace intrawarez\slimannotations\example\controllers;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use intrawarez\slim3annotations\annotations\Group;
-use intrawarez\slim3annotations\annotations\GET;
-use intrawarez\slim3annotations\annotations\Dependency;
+use intrawarez\slimannotations\annotations as SLM;
 use Interop\Container\ContainerInterface;
 
 /**
- * @Group(pattern="/")
+ * @SLM\Group(pattern="/")
  *
  * @author maxmeffert
  */
@@ -17,14 +15,14 @@ class TestController
 {
 
     /**
-     * @Dependency(id="twig")
+     * @SLM\Dependency(id="twig")
      *
      * @var \Twig_Environment
      */
     private $twig;
 
     /**
-     * @GET
+     * @SLM\GET
      *
      * @param ServerRequestInterface $req
      * @param ResponseInterface $res
