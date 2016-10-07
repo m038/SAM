@@ -1,11 +1,11 @@
 <?php
 namespace intrawarez\slimannotations\tests;
 
-use PHPUnit\Framework\TestCase;
-use intrawarez\slimannotations\GroupDelegate;
 use intrawarez\slimannotations\annotations\GET;
 use intrawarez\slimannotations\App;
-use intrawarez\slimannotations\GroupMethodDelegate;
+use intrawarez\slimannotations\delegates\GroupDelegate;
+use intrawarez\slimannotations\delegates\GroupMethodDelegate;
+use PHPUnit\Framework\TestCase;
 use Slim\Container;
 
 include_once __DIR__."/MockApp.php";

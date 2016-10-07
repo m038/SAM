@@ -2,7 +2,7 @@
 namespace intrawarez\slimannotations\tests;
 
 use PHPUnit\Framework\TestCase;
-use intrawarez\slimannotations\GroupMethodDelegate;
+use intrawarez\slimannotations\delegates\GroupMethodDelegate;
 use Slim\Container;
 
 class GroupMethodDelegateTest extends TestCase

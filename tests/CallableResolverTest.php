@@ -3,7 +3,7 @@ namespace intrawarez\slimannotations\tests;
 
 use PHPUnit\Framework\TestCase;
 use intrawarez\slimannotations\CallableResolver;
-use intrawarez\slimannotations\GroupMethodDelegate;
+use intrawarez\slimannotations\delegates\GroupMethodDelegate;
 use Slim\Container;
 
 class CallableResolverTest extends TestCase
