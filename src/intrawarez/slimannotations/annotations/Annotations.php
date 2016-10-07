@@ -5,8 +5,8 @@ use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use intrawarez\sabertooth\optionals\Optional;
 use intrawarez\sabertooth\optionals\OptionalInterface;
-use function intrawarez\sabertooth\util\repeatables\fn\filter;
-use function intrawarez\sabertooth\callables\predicates\fn\_instanceOf;
+use function intrawarez\sabertooth\fn\predicates\_instanceOf;
+use function intrawarez\sabertooth\fn\repeatables\filter;
 
 abstract class Annotations
 {
@@ -53,7 +53,7 @@ abstract class Annotations
     {
         $group = self::reader()->getClassAnnotation($class, Group::class);
         
-        return Optional::Of($group);
+        return Optional::of($group);
     }
 
     /**
@@ -78,7 +78,7 @@ abstract class Annotations
     {
         $dependency = self::reader()->getPropertyAnnotation($property, Dependency::class);
         
-        return Optional::Of($dependency);
+        return Optional::of($dependency);
     }
 
     /**
@@ -90,7 +90,7 @@ abstract class Annotations
     {
         $method = self::reader()->getMethodAnnotation($method, HttpMethod::class);
         
-        return Optional::Of($method);
+        return Optional::of($method);
     }
 
     /**

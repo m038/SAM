@@ -21,7 +21,6 @@ class Middlewares implements SlimAnnotation, \IteratorAggregate
                 $this->middlewares[] = $middleware;
             }
         }
-        
     }
     
     public function getIterator()

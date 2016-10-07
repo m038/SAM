@@ -3,6 +3,7 @@ namespace intrawarez\slimannotations;
 
 use Slim\Interfaces\CallableResolverInterface;
 use Interop\Container\ContainerInterface;
+use intrawarez\slimannotations\delegates\DelegateInterface;
 
 /**
  * Implementation of CallableResolverInterface for delegates.

@@ -5,6 +5,7 @@ use Interop\Container\ContainerInterface;
 use intrawarez\sabertooth\reflection\Reflections;
 use intrawarez\slimannotations\annotations\Group;
 use intrawarez\slimannotations\annotations\Annotations;
+use intrawarez\slimannotations\delegates\GroupDelegate;
 
 /**
  * An extension of \Slim\App which loads its handlers automatically,

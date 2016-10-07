@@ -2,9 +2,10 @@
 namespace intrawarez\slimannotations\metadata;
 
 use Doctrine\Common\Annotations\Reader;
-use function intrawarez\sabertooth\util\repeatables\fn\filter;
-use function intrawarez\sabertooth\callables\predicates\fn\_instanceOf;
+
 use intrawarez\slimannotations\annotations\SlimAnnotation;
+use function intrawarez\sabertooth\fn\repeatables\filter;
+use function intrawarez\sabertooth\fn\predicates\_instanceOf;
 
 abstract class AbstractMetadata
 {
@@ -27,6 +28,11 @@ abstract class AbstractMetadata
         }
         
         $this->annotations = filter($annotations, _instanceOf(SlimAnnotation::class));
+    }
+    
+    public function isAnnotated(): bool
+    {
+        return count($this->annotations) > 0;
     }
     
     public function getAnnotations(): array
