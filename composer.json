@@ -15,7 +15,22 @@
         		"src/",
         		"example/src/"
         	]
-        }
+        },
+        "files": [
+        	"src/intrawarez/slimannotations/annotations/SlimAnnotation.php",
+        	"src/intrawarez/slimannotations/annotations/Dependency.php",
+        	"src/intrawarez/slimannotations/annotations/Group.php",
+        	"src/intrawarez/slimannotations/annotations/Middlewares.php",
+        	"src/intrawarez/slimannotations/annotations/Middleware.php",
+        	"src/intrawarez/slimannotations/annotations/HttpMethod.php",
+        	"src/intrawarez/slimannotations/annotations/GET.php",
+        	"src/intrawarez/slimannotations/annotations/POST.php",
+        	"src/intrawarez/slimannotations/annotations/PUT.php",
+        	"src/intrawarez/slimannotations/annotations/DELETE.php",
+        	"src/intrawarez/slimannotations/annotations/OPTIONS.php",
+        	"src/intrawarez/slimannotations/annotations/POST.php",
+        	"src/intrawarez/slimannotations/annotations/ANY.php"
+        ]
     },
     "minimum-stability": "dev",
     "prefer-stable" : true,
