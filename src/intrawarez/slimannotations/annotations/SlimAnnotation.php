@@ -7,6 +7,6 @@ namespace intrawarez\slimannotations\annotations;
  * @author maxmeffert
  * @Annotation
  */
-interface Annotation
+interface SlimAnnotation
 {
 }

@@ -2,12 +2,12 @@
 namespace intrawarez\slimannotations\annotations;
 
 /**
- * The annotation for middlewares.
+ * The annotation for a middlewares.
  *
  * @author maxmeffert
  * @Annotation
  */
-class Middleware implements Annotation
+class Middleware implements SlimAnnotation
 {
 
     public $name;

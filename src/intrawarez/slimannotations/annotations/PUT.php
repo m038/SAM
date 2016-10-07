@@ -7,6 +7,6 @@ namespace intrawarez\slimannotations\annotations;
  * @author maxmeffert
  * @Annotation
  */
-class PUT extends Method implements Annotation
+class PUT extends HttpMethod implements SlimAnnotation
 {
 }

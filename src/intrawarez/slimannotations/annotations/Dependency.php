@@ -7,7 +7,7 @@ namespace intrawarez\slimannotations\annotations;
  * @author maxmeffert
  * @Annotation
  */
-class Dependency implements Annotation
+class Dependency implements SlimAnnotation
 {
 
     public $id;

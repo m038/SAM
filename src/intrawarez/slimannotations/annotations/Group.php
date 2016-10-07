@@ -7,7 +7,7 @@ namespace intrawarez\slimannotations\annotations;
  * @author maxmeffert
  * @Annotation
  */
-class Group implements Annotation
+class Group implements SlimAnnotation
 {
 
     public $pattern;

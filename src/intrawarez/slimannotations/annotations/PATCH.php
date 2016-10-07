@@ -7,6 +7,6 @@ namespace intrawarez\slimannotations\annotations;
  * @author maxmeffert
  * @Annotation
  */
-class PATCH extends Method implements Annotation
+class PATCH extends HttpMethod implements SlimAnnotation
 {
 }

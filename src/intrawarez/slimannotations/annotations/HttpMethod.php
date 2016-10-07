@@ -6,7 +6,7 @@ namespace intrawarez\slimannotations\annotations;
  *
  * @author maxmeffert
  */
-abstract class Method implements Annotation
+abstract class HttpMethod implements SlimAnnotation
 {
 
     public $pattern = "";

@@ -88,7 +88,7 @@ abstract class Annotations
      */
     final public static function method(\ReflectionMethod $method): OptionalInterface
     {
-        $method = self::reader()->getMethodAnnotation($method, Method::class);
+        $method = self::reader()->getMethodAnnotation($method, HttpMethod::class);
         
         return Optional::Of($method);
     }
