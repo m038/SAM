@@ -64,7 +64,7 @@ final class ClassMetadata extends AbstractMetadata
         $this->middlewaresDeclarationOptional = first(filter($this->getAnnotations(), _instanceOf(Middlewares::class)));
         
         foreach ($reflectionClass->getMethods(\ReflectionMethod::IS_PUBLIC) as $reflectionMethod) {
-            $methodMetadata = new MethodMetadata($reflectionMethod, $reader);
+            $methodMetadata = new MethodMetadata($this, $reflectionMethod, $reader);
             if ($methodMetadata->isAnnotated()) {
                 $this->methodMetadata[] = $methodMetadata;
             }
