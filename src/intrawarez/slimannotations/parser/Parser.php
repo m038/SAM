@@ -57,7 +57,7 @@ final class Parser
     
     public function parseDirs(array $dirs): ParserResults
     {
-        $files = (new Finder())->files()->in($dir);
+        $files = (new Finder())->files()->in($dirs);
         
         return $this->parseSPLFiles($files);
     }
