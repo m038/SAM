@@ -6,6 +6,10 @@ use intrawarez\sabertooth\reflection\Reflections;
 use intrawarez\slimannotations\annotations\Group;
 use intrawarez\slimannotations\annotations\Annotations;
 use intrawarez\slimannotations\delegates\GroupDelegate;
+use intrawarez\slimannotations\metadata\MetadataLoader;
+use intrawarez\slimannotations\parser\Parser;
+use intrawarez\slimannotations\metadata\MetadataFactory;
+use Doctrine\Common\Annotations\AnnotationReader;
 
 /**
  * An extension of \Slim\App which loads its handlers automatically,
@@ -17,6 +21,20 @@ use intrawarez\slimannotations\delegates\GroupDelegate;
 class App extends \Slim\App
 {
 
+    /**
+     * Augments the container
+     * @param array|\Interop\Container\ContainerInterface $container
+     * @return array|\Interop\Container\ContainerInterface
+     */
+    private static function augmentContainer($container)
+    {
+//         $container["callableResolver"] = function ($container) {
+//             return new CallableResolver($container);
+//         };
+        
+        return $container;
+    }
+    
     /**
      * Creates a new App instances.
      *
@@ -35,12 +53,7 @@ class App extends \Slim\App
      */
     public function __construct($container = [])
     {
-        $container["callableResolver"] = function ($container) {
-            
-            return new CallableResolver($container);
-        };
-        
-        parent::__construct($container);
+        parent::__construct(self::augmentContainer($container));
         
         $this->loadAllNamespaces($this->getNamespaces());
     }
@@ -127,8 +140,19 @@ class App extends \Slim\App
      */
     public function loadAllNamespaces(array $namespaces)
     {
-        foreach ($namespaces as $namespace => $directory) {
-            $this->loadNamespace($namespace, $directory);
+//         foreach ($namespaces as $namespace => $directory) {
+//             $this->loadNamespace($namespace, $directory);
+//         }
+
+        $parser = new Parser();
+        $reader = new AnnotationReader();
+        $factory = new MetadataFactory($reader);
+        $loader = new MetadataLoader($parser, $factory);
+        $instantiator = new Instantiator($this->getContainer());
+        $mapper = new Mapper($this, $instantiator);
+        
+        foreach ($loader->loadDirs($namespaces) as $classMetadata) {
+            $mapper->mapClass($classMetadata);
         }
     }
 }
