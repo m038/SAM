@@ -10,6 +10,7 @@ use intrawarez\slimannotations\annotations\Dependency;
 
 final class PropertyMetadata extends AbstractMetadata
 {
+    private $classMetadata;
     /**
      * @var \ReflectionProperty
      */
@@ -20,13 +21,19 @@ final class PropertyMetadata extends AbstractMetadata
      */
     private $dependencyOptional;
     
-    public function __construct(\ReflectionProperty $reflectionProperty, Reader $reader)
+    public function __construct(ClassMetadata $classMetadata, \ReflectionProperty $reflectionProperty, Reader $reader)
     {
         parent::__construct($reflectionProperty, $reader);
         
+        $this->classMetadata = $classMetadata;
         $this->reflectionProperty = $reflectionProperty;
         
         $this->dependencyOptional = first(filter($this->getAnnotations(), _instanceOf(Dependency::class)));
+    }
+    
+    public function getClassMetadata(): ClassMetadata
+    {
+        return $this->classMetadata;
     }
     
     public function getReflectionProperty(): \ReflectionProperty

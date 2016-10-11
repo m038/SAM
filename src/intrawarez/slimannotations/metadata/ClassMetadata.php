@@ -71,7 +71,7 @@ final class ClassMetadata extends AbstractMetadata
         }
         
         foreach ($reflectionClass->getProperties() as $reflectionProperty) {
-            $propertyMetadata = new PropertyMetadata($reflectionProperty, $reader);
+            $propertyMetadata = new PropertyMetadata($this, $reflectionProperty, $reader);
             if ($propertyMetadata->isAnnotated()) {
                 $this->propertyMetadata[] = $propertyMetadata;
             }
