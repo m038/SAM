@@ -4,7 +4,7 @@ namespace intrawarez\slimannotations\tests;
 use intrawarez\slimannotations\annotations\GET;
 use intrawarez\slimannotations\App;
 use intrawarez\slimannotations\delegates\GroupDelegate;
-use intrawarez\slimannotations\delegates\GroupMethodDelegate;
+use intrawarez\slimannotations\delegates\GroupActionDelegate;
 use PHPUnit\Framework\TestCase;
 use Slim\Container;
 
@@ -35,7 +35,7 @@ class GroupDelegateTest extends TestCase
         $this->assertGreaterThan(0, count($delegates));
         $this->assertAttributeEquals("get", "method", $delegates[0]);
         $this->assertAttributeEquals("", "pattern", $delegates[0]);
-        $this->assertAttributeInstanceOf(GroupMethodDelegate::class, "callable", $delegates[0]);
+        $this->assertAttributeInstanceOf(GroupActionDelegate::class, "callable", $delegates[0]);
         $this->assertAttributeEquals(DummyGroupDelegateTarget::class, "className", $delegates[0]->callable);
         $this->assertAttributeEquals("method1", "methodName", $delegates[0]->callable);
     }

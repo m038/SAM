@@ -3,7 +3,7 @@ namespace intrawarez\slimannotations\tests;
 
 use PHPUnit\Framework\TestCase;
 use intrawarez\slimannotations\CallableResolver;
-use intrawarez\slimannotations\delegates\GroupMethodDelegate;
+use intrawarez\slimannotations\delegates\GroupActionDelegate;
 use Slim\Container;
 
 class CallableResolverTest extends TestCase
@@ -16,7 +16,7 @@ class CallableResolverTest extends TestCase
         $resolver = new CallableResolver($container);
         $defaultResolver = new \Slim\CallableResolver($container);
         
-        $deletate = new GroupMethodDelegate(CallableResolverTest::class, "testResolve");
+        $deletate = new GroupActionDelegate(CallableResolverTest::class, "testResolve");
         $nonDelegate = function () {
         };
         

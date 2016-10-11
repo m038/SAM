@@ -2,7 +2,7 @@
 namespace intrawarez\slimannotations\tests;
 
 use PHPUnit\Framework\TestCase;
-use intrawarez\slimannotations\delegates\GroupMethodDelegate;
+use intrawarez\slimannotations\delegates\GroupActionDelegate;
 use Slim\Container;
 
 class GroupMethodDelegateTest extends TestCase
@@ -13,16 +13,16 @@ class GroupMethodDelegateTest extends TestCase
         $className = GroupMethodDelegateTest::class;
         $methodName = "testGetCallable";
         
-        $delegate = new GroupMethodDelegate($className, $methodName);
+        $delegate = new GroupActionDelegate($className, $methodName);
         
         $callable = $delegate->getCallable(new Container());
         
         $this->assertInstanceOf(\Closure::class, $callable);
         
-        $className = GroupMethodDelegate::class;
+        $className = GroupActionDelegate::class;
         $methodName = "foo";
         
-        $delegate = new GroupMethodDelegate($className, $methodName);
+        $delegate = new GroupActionDelegate($className, $methodName);
         
         $this->expectException(\Exception::class);
         $callable = $delegate->getCallable(new Container());
