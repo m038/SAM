@@ -6,7 +6,6 @@ use intrawarez\slimannotations\annotations\Group;
 use intrawarez\slimannotations\annotations\HttpMethod;
 use intrawarez\slimannotations\annotations\Middleware;
 use intrawarez\slimannotations\annotations\Middlewares;
-use intrawarez\sabertooth\optionals\Optional;
 use function intrawarez\sabertooth\fn\predicates\_instanceOf;
 use function intrawarez\sabertooth\fn\repeatables\filter;
 use function intrawarez\sabertooth\fn\repeatables\first;
@@ -59,10 +58,10 @@ final class ClassMetadata extends AbstractMetadata
         
         $this->reflectionClass = $reflectionClass;
         
-        $this->groupDeclarationOptional = Optional::of(first(filter($this->getAnnotations(), _instanceOf(Group::class))));
-        $this->methodDeclarationOptional = Optional::of(first(filter($this->getAnnotations(), _instanceOf(HttpMethod::class))));
-        $this->middlewareDeclarationOptional = Optional::of(first(filter($this->getAnnotations(), _instanceOf(Middleware::class))));
-        $this->middlewaresDeclarationOptional = Optional::of(first(filter($this->getAnnotations(), _instanceOf(Middlewares::class))));
+        $this->groupDeclarationOptional = first(filter($this->getAnnotations(), _instanceOf(Group::class)));
+        $this->methodDeclarationOptional = first(filter($this->getAnnotations(), _instanceOf(HttpMethod::class)));
+        $this->middlewareDeclarationOptional = first(filter($this->getAnnotations(), _instanceOf(Middleware::class)));
+        $this->middlewaresDeclarationOptional = first(filter($this->getAnnotations(), _instanceOf(Middlewares::class)));
         
         foreach ($reflectionClass->getMethods(\ReflectionMethod::IS_PUBLIC) as $reflectionMethod) {
             $methodMetadata = new MethodMetadata($reflectionMethod, $reader);

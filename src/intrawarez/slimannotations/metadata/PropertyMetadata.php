@@ -2,12 +2,11 @@
 namespace intrawarez\slimannotations\metadata;
 
 use Doctrine\Common\Annotations\Reader;
-use intrawarez\sabertooth\optionals\Optional;
-use function intrawarez\sabertooth\fn\repeatables\first;
-use function intrawarez\sabertooth\fn\repeatables\filter;
 use function intrawarez\sabertooth\fn\predicates\_instanceOf;
-use intrawarez\slimannotations\annotations\Dependency;
+use function intrawarez\sabertooth\fn\repeatables\filter;
+use function intrawarez\sabertooth\fn\repeatables\first;
 use intrawarez\sabertooth\optionals\OptionalInterface;
+use intrawarez\slimannotations\annotations\Dependency;
 
 final class PropertyMetadata extends AbstractMetadata
 {
@@ -27,7 +26,7 @@ final class PropertyMetadata extends AbstractMetadata
         
         $this->reflectionProperty = $reflectionProperty;
         
-        $this->dependencyOptional = Optional::of(first(filter($this->getAnnotations(), _instanceOf(Dependency::class))));
+        $this->dependencyOptional = first(filter($this->getAnnotations(), _instanceOf(Dependency::class)));
     }
     
     public function getReflectionProperty(): \ReflectionProperty
