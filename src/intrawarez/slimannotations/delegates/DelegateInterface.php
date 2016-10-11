@@ -2,6 +2,8 @@
 namespace intrawarez\slimannotations\delegates;
 
 use Interop\Container\ContainerInterface;
+use Slim\App;
+use intrawarez\slimannotations\Instantiator;
 
 /**
  * Interface for delegates.
@@ -12,10 +14,8 @@ use Interop\Container\ContainerInterface;
 interface DelegateInterface
 {
 
-    /**
-     * Gets the callable.
-     * @param ContainerInterface $container
-     * @return callable
-     */
-    public function getCallable(ContainerInterface $container): callable;
+    public function getApp(): App;
+    public function getContainer(): ContainerInterface;
+    public function getInstantiator(): Instantiator;
+    public function __invoke();
 }
