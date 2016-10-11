@@ -1,15 +1,11 @@
 <?php
 namespace intrawarez\slimannotations;
 
+use Doctrine\Common\Annotations\AnnotationReader;
 use Interop\Container\ContainerInterface;
-use intrawarez\sabertooth\reflection\Reflections;
-use intrawarez\slimannotations\annotations\Group;
-use intrawarez\slimannotations\annotations\Annotations;
-use intrawarez\slimannotations\delegates\GroupDelegate;
+use intrawarez\slimannotations\metadata\MetadataFactory;
 use intrawarez\slimannotations\metadata\MetadataLoader;
 use intrawarez\slimannotations\parser\Parser;
-use intrawarez\slimannotations\metadata\MetadataFactory;
-use Doctrine\Common\Annotations\AnnotationReader;
 
 /**
  * An extension of \Slim\App which loads its handlers automatically,
