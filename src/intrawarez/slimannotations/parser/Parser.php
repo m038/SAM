@@ -5,10 +5,9 @@ use PhpParser\ParserFactory;
 use PhpParser\Parser as PhpParser;
 use Symfony\Component\Finder\Finder;
 
-final class Parser 
+final class Parser
 {
     /**
-     * 
      * @var PhpParser
      */
     private $parser;
@@ -19,7 +18,6 @@ final class Parser
     }
     
     /**
-     * 
      * @param \SplFileInfo $file
      * @return \PhpParser\Node[]|NULL
      */
@@ -31,7 +29,6 @@ final class Parser
     }
     
     /**
-     * 
      * @param \Traversable $files
      * @return array
      */
@@ -49,7 +46,6 @@ final class Parser
     }
     
     /**
-     * 
      * @param string $dir
      * @return ParserResults
      */
@@ -61,7 +57,6 @@ final class Parser
     }
     
     /**
-     * 
      * @param array $dirs
      * @return ParserResults
      */

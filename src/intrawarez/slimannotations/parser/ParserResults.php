@@ -8,7 +8,8 @@ final class ParserResults implements \IteratorAggregate
 {
     private $results;
     
-    public function __construct(array $results) {
+    public function __construct(array $results)
+    {
         $this->results = filter($results, _instanceOf(ParserResult::class));
     }
     
@@ -19,9 +20,8 @@ final class ParserResults implements \IteratorAggregate
     
     public function getClassnames()
     {
-        return array_reduce(array_map(function(ParserResult $result) {
+        return array_reduce(array_map(function (ParserResult $result) {
             return $result->getClassnames();
         }, $this->results), "array_merge", []);
     }
-    
 }

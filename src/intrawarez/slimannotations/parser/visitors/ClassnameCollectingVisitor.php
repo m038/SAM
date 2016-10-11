@@ -19,7 +19,7 @@ class ClassnameCollectingVisitor extends NameResolver
         parent::enterNode($node);
         
         if ($node instanceof Class_) {
-            $this->classnames[] = $node->namespacedName->toString();            
+            $this->classnames[] = $node->namespacedName->toString();
         }
     }
 }

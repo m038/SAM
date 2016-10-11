@@ -8,7 +8,7 @@ use intrawarez\slimannotations\annotations\GET;
 use intrawarez\slimannotations\Instantiator;
 
 class GroupDelegate extends AbstractDelegate
-{   
+{
     private $metadata;
     
     public function __construct(App $app, Instantiator $instantiator, ClassMetadata $metadata)
@@ -19,7 +19,6 @@ class GroupDelegate extends AbstractDelegate
     
     public function __invoke()
     {
-        
         foreach ($this->metadata->getMethodMetadata() as $methodMetadata) {
             /**
              * @var MethodMetadata $methodMetadata
