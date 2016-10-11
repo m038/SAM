@@ -48,6 +48,11 @@ final class Parser
         return new ParserResults($results);
     }
     
+    /**
+     * 
+     * @param string $dir
+     * @return ParserResults
+     */
     public function parseDir(string $dir): ParserResults
     {
         $files = (new Finder())->files()->in($dir);
@@ -55,6 +60,11 @@ final class Parser
         return $this->parseSPLFiles($files);
     }
     
+    /**
+     * 
+     * @param array $dirs
+     * @return ParserResults
+     */
     public function parseDirs(array $dirs): ParserResults
     {
         $files = (new Finder())->files()->in($dirs);
