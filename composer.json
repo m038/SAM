@@ -8,12 +8,15 @@
             "email": "packagist@intrawarez.de"
         }
     ],
+    "bin": [
+    	"slam"
+    ],
     "license": "MIT",
     "autoload": {
         "psr-4": {
-        	"": [
-        		"src/",
-        		"example/src/"
+        	"intrawarez\\": [
+        		"src/intrawarez/",
+        		"example/src/intrawarez/"
         	]
         },
         "files": [
