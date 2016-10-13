@@ -4,19 +4,21 @@
 [![License](https://poser.pugx.org/intrawarez/slim-annotations/license)](https://packagist.org/packages/intrawarez/slim-annotations)
 
 
-# [slim-annotations](https://intrawarez.github.io/slim-annotations/)
-Annotations for [Slim](http://www.slimframework.com/).
+# [sl@m](https://intrawarez.github.io/slim-annotations/)
+Annotation driven mapping for [Slim](http://www.slimframework.com/).
 
 ## Features
 
 Annotation markup currently supports:
-- automated ```App::group```-mapping for classes and methods
-- automated Dependency Injection for properties
+- Group-Mapping for classes using ```@Group``` 
+- Action-Mapping for classes or methods using ```@GET```, ```@POST```, ```@PUT```, etc. 
+- Middleware-Mapping for classes or methods using ```@Middleware``` 
+- Dependency-Mapping for properties using ```@Dependency``` (facilitates automated dependency injection of container elements as class properties)
 
 ## Installation
 
 ```
-composer require intrawarez/slim-annotations
+composer require intrawarez/slam
 ```
 
 ## Documentation
@@ -46,7 +48,7 @@ return [
 
 #### index.php
 ```php
-use intrawarez\slimannotations\App;
+use intrawarez\slam\App;
 
 $settings = require __DIR__ . "/path/to/settings.php";
 
@@ -57,54 +59,92 @@ $app = App::create($settings);
 $app->run();
 ```
 
-### Groups
-
-#### dependencies.php
-```php
-$container["twig"] = function (Slim\Container $c) {
-
-	$settings = $c->get("settings");
-
-	$templatePath = $settings["renderer"]["template_path"];
-
-	$loader = new Twig_Loader_Filesystem($templatePath);
-
-	$twig = new Twig_Environment($loader);
-	$twig->addGlobal("basePath", dirname($_SERVER["SCRIPT_NAME"]));
-
-	return $twig;
-
-};
-```
-
-#### Hello.php
+### Group-Mapping
+**MyGroup.php**
 ```php
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-use intrawarez\slimannotations\annotations\Group;
-use intrawarez\slimannotations\annotations\Dependency;
-use intrawarez\slimannotations\annotations\GET;
+use intrawarez\slam\annotations as SLAM;
 
-/** Group(pattern="/") */
-class Hello {
-
-	/** @Dependency(id="twig") */
-	private $twig;
+/** @SLAM\Group(pattern="/hello") */
+class MyGroup {
 	
-	/** @GET */   
-	public function foo (ServerRequestInterface $req, ResponseInterface $res, array $args) {
-		
-		$res->getBody()->write($this->twig->render("index.twig",[
-			"hello" => "World"
-		]));
-			
-		return $res;
-		
+	/** @SLAM\GET */   
+	public function doFoo (ServerRequestInterface $req, ResponseInterface $res, array $args) {
+		...
+	}
+	
+	/** @SLAM\POST(pattern="/bar") */   
+	public function doBar (ServerRequestInterface $req, ResponseInterface $res, array $args) {
+		...
 	}
 
 }
+```
 
+
+### Action-Mapping
+**MyAction.php**
+```php
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+
+use intrawarez\slam\annotations as SLAM;
+
+/** @SLAM\GET(pattern="/hello") */
+class MyAction {
+	  
+	public function __invoke (ServerRequestInterface $req, ResponseInterface $res, array $args) {
+		...
+	}
+
+}
+```
+
+### Middleware-Mapping
+**MyGroup.php**
+```php
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+
+use intrawarez\slam\annotations as SLAM;
+
+/** @SLAM\Group(pattern="/hello")
+ *  @SLAM\Middleware(class="\\namespace\\of\\MyMiddlwareClass")
+ */
+class MyGroup {
+	
+/** @SLAM\GET 
+ *  @SLAM\Middleware(callback="\\namespace\\of\\MyMiddlwareCallback")
+ */   
+	public function doFoo (ServerRequestInterface $req, ResponseInterface $res, array $args) {
+		...
+	}
+
+}
+```
+
+### Dependency-Mapping
+**dependencies.php**
+```php
+$container["MyDependency"] = function (Slim\Container $c) {
+	...
+};
+```
+**MyController.php**
+```php
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+
+use intrawarez\slam\annotations as SLAM;
+
+class MyController {
+	  
+	/** @SLAM\Dependency(id="MyDependency") */
+	private $myDependency;
+
+}
 ```
 
 
