@@ -17,10 +17,13 @@ foreach ($autoloadFiles as $autoloadFile) {
 }
 
 if (is_null($autoload)) {
-	echo "Unable to autoload!";
+	echo 
+	"=======================\n".
+	"= Unable to autoload! =\n".
+	"=======================\n";
 	return;
 }
 
 include_once $autoload;
 
-(new \intrawarez\slimannotations\cli\SlamConsole())->run();
+return (new \intrawarez\slimannotations\cli\SlamConsole())->run();
