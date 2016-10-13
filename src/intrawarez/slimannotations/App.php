@@ -23,11 +23,7 @@ class App extends \Slim\App
      * @return array|\Interop\Container\ContainerInterface
      */
     private static function augmentContainer($container)
-    {
-//         $container["callableResolver"] = function ($container) {
-//             return new CallableResolver($container);
-//         };
-        
+    {        
         return $container;
     }
     
