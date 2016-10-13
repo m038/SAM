@@ -56,7 +56,7 @@ class Validate extends Command
             if ($classMetadata->isGroupDeclaration()) {
                 $rows = [];
                 
-                if ($this->groupHasNoMappedMethods($classMetadata)){
+                if ($this->groupHasNoMappedMethods($classMetadata)) {
                     $rows[] = [
                         count($rows)+1,
                         "<warning>WARING</warning>",
@@ -77,7 +77,6 @@ class Validate extends Command
                             "Mapped method <info>$methodName</info> is not public!",
                         ];
                     }
-                    
                 }
                 
                 if (count($rows) > 0) {
@@ -86,8 +85,6 @@ class Validate extends Command
                 } else {
                     $io->success("Group-Mapping in $classShortName is Valid!");
                 }
-                
-                
             } elseif ($classMetadata->isActionDeclaration()) {
                 $rows = [];
                 
@@ -131,11 +128,10 @@ class Validate extends Command
                 array_map(
                     function (\ReflectionMethod $method) {
                         return strtolower($method->getName());
-                    }, 
+                    },
                     $reflectionClass->getMethods(\ReflectionMethod::IS_PUBLIC)
                 )
             )
         );
-        
     }
 }

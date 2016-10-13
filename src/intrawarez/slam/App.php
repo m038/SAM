@@ -23,7 +23,7 @@ class App extends \Slim\App
      * @return array|\Interop\Container\ContainerInterface
      */
     private static function augmentContainer($container)
-    {        
+    {
         return $container;
     }
     
