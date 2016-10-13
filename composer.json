@@ -20,18 +20,18 @@
         	]
         },
         "files": [
-        	"src/intrawarez/slimannotations/annotations/SlimAnnotation.php",
-        	"src/intrawarez/slimannotations/annotations/Dependency.php",
-        	"src/intrawarez/slimannotations/annotations/Group.php",
-        	"src/intrawarez/slimannotations/annotations/Middleware.php",
-        	"src/intrawarez/slimannotations/annotations/Action.php",
-        	"src/intrawarez/slimannotations/annotations/GET.php",
-        	"src/intrawarez/slimannotations/annotations/POST.php",
-        	"src/intrawarez/slimannotations/annotations/PUT.php",
-        	"src/intrawarez/slimannotations/annotations/DELETE.php",
-        	"src/intrawarez/slimannotations/annotations/OPTIONS.php",
-        	"src/intrawarez/slimannotations/annotations/PATCH.php",
-        	"src/intrawarez/slimannotations/annotations/ANY.php"
+        	"src/intrawarez/slam/annotations/SlimAnnotation.php",
+        	"src/intrawarez/slam/annotations/Dependency.php",
+        	"src/intrawarez/slam/annotations/Group.php",
+        	"src/intrawarez/slam/annotations/Middleware.php",
+        	"src/intrawarez/slam/annotations/Action.php",
+        	"src/intrawarez/slam/annotations/GET.php",
+        	"src/intrawarez/slam/annotations/POST.php",
+        	"src/intrawarez/slam/annotations/PUT.php",
+        	"src/intrawarez/slam/annotations/DELETE.php",
+        	"src/intrawarez/slam/annotations/OPTIONS.php",
+        	"src/intrawarez/slam/annotations/PATCH.php",
+        	"src/intrawarez/slam/annotations/ANY.php"
         ]
     },
     "minimum-stability": "dev",
