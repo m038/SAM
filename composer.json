@@ -1,7 +1,7 @@
 {
-    "name": "intrawarez/slim-annotations",
-    "description": "Annotations for the Slim framework",
-    "homepage": "https://intrawarez.github.io/slim-annotations/",
+    "name": "intrawarez/slam",
+    "description": "Slim Annotation Mapping",
+    "homepage": "https://intrawarez.github.io/slam/",
     "authors": [
         {
             "name": "Maximilian Meffert",
