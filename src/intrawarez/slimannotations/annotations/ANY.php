@@ -7,6 +7,6 @@ namespace intrawarez\slimannotations\annotations;
  * @author maxmeffert
  * @Annotation
  */
-class ANY implements SlimAnnotation
+class ANY extends Action implements SlimAnnotation
 {
 }

@@ -2,7 +2,7 @@
 namespace intrawarez\slimannotations\metadata;
 
 use Doctrine\Common\Annotations\Reader;
-use intrawarez\slimannotations\annotations\HttpMethod;
+use intrawarez\slimannotations\annotations\Action;
 use intrawarez\slimannotations\annotations\Middlewares;
 
 use function intrawarez\sabertooth\fn\predicates\_instanceOf;
@@ -28,7 +28,7 @@ final class MethodMetadata extends AbstractMetadata
         $this->classMetadata = $classMetadata;
         $this->reflectionMethod = $reflectionMethod;
         
-        $this->methods = filter($this->getAnnotations(), _instanceOf(HttpMethod::class));
+        $this->methods = filter($this->getAnnotations(), _instanceOf(Action::class));
         $this->middlewaresOptional = first(filter($this->getAnnotations(), _instanceOf(Middlewares::class)));
     }
     

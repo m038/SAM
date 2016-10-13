@@ -2,12 +2,11 @@
 namespace intrawarez\slimannotations\annotations;
 
 /**
- * The annotation for slim groups
+ * The base class for HTTP method annotation handlers.
  *
  * @author maxmeffert
- * @Annotation
  */
-class Group implements SlimAnnotation
+abstract class Action implements SlimAnnotation
 {
     private $pattern;
     

@@ -4,7 +4,7 @@ namespace intrawarez\slimannotations\tests;
 use intrawarez\slimannotations\annotations\Group;
 use intrawarez\slimannotations\annotations\Middleware;
 use intrawarez\slimannotations\annotations\Dependency;
-use intrawarez\slimannotations\annotations\HttpMethod;
+use intrawarez\slimannotations\annotations\Action;
 use intrawarez\slimannotations\annotations\GET;
 use intrawarez\slimannotations\annotations\Annotations;
 

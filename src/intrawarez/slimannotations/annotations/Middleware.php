@@ -10,13 +10,25 @@ namespace intrawarez\slimannotations\annotations;
 class Middleware implements SlimAnnotation
 {
 
-    public $name;
+    private $name;
     
-    public $class;
-    public $callable;
+    public function __construct(array $arguments = [])
+    {
+        $this->name = strval($arguments["name"]);
+    }
+    
+    public function getName(): string
+    {
+        return $this->name;
+    }
     
     public function isClass(): bool
     {
-        return isset($this->class);
+        return class_exists($this->getName());
+    }
+    
+    public function isCallback()
+    {
+        return function_exists($this->getName());
     }
 }

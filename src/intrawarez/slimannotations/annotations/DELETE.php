@@ -7,6 +7,6 @@ namespace intrawarez\slimannotations\annotations;
  * @author maxmeffert
  * @Annotation
  */
-class DELETE extends HttpMethod implements SlimAnnotation
+class DELETE extends Action implements SlimAnnotation
 {
 }

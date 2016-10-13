@@ -9,6 +9,15 @@ namespace intrawarez\slimannotations\annotations;
  */
 class Dependency implements SlimAnnotation
 {
-
-    public $id;
+    private $id;
+    
+    public function __construct(array $arguments = [])
+    {
+        $this->id = strval($arguments["id"]);
+    }
+    
+    public function getId(): string
+    {
+        return $this->id;
+    }
 }

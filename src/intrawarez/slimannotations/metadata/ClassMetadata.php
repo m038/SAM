@@ -3,7 +3,7 @@ namespace intrawarez\slimannotations\metadata;
 
 use Doctrine\Common\Annotations\Reader;
 use intrawarez\slimannotations\annotations\Group;
-use intrawarez\slimannotations\annotations\HttpMethod;
+use intrawarez\slimannotations\annotations\Action;
 use intrawarez\slimannotations\annotations\Middleware;
 use intrawarez\slimannotations\annotations\Middlewares;
 use function intrawarez\sabertooth\fn\predicates\_instanceOf;
@@ -59,7 +59,7 @@ final class ClassMetadata extends AbstractMetadata
         $this->reflectionClass = $reflectionClass;
         
         $this->groupDeclarationOptional = first(filter($this->getAnnotations(), _instanceOf(Group::class)));
-        $this->methodDeclarationOptional = first(filter($this->getAnnotations(), _instanceOf(HttpMethod::class)));
+        $this->methodDeclarationOptional = first(filter($this->getAnnotations(), _instanceOf(Action::class)));
         $this->middlewareDeclarationOptional = first(filter($this->getAnnotations(), _instanceOf(Middleware::class)));
         $this->middlewaresDeclarationOptional = first(filter($this->getAnnotations(), _instanceOf(Middlewares::class)));
         
