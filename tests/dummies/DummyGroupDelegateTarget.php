@@ -1,7 +1,7 @@
 <?php
-namespace intrawarez\slimannotations\tests;
+namespace intrawarez\slam\tests;
 
-use intrawarez\slimannotations\annotations\GET;
+use intrawarez\slam\annotations\GET;
 
 class DummyGroupDelegateTarget
 {

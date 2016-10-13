@@ -1,7 +1,7 @@
 <?php
-namespace intrawarez\slimannotations\tests;
+namespace intrawarez\slam\tests;
 
-use intrawarez\slimannotations\annotations\Dependency;
+use intrawarez\slam\annotations\Dependency;
 
 class DummyInjectionTarget
 {

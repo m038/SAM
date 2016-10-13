@@ -1,7 +1,7 @@
 <?php
-namespace intrawarez\slimannotations\tests;
+namespace intrawarez\slam\tests;
 
-use intrawarez\slimannotations\App;
+use intrawarez\slam\App;
 
 include_once __DIR__."/MockAppDelegateRecord.php";
 

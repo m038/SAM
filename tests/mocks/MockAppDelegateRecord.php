@@ -1,5 +1,5 @@
 <?php
-namespace intrawarez\slimannotations\tests;
+namespace intrawarez\slam\tests;
 
 class MockAppDelegateRecord
 {
