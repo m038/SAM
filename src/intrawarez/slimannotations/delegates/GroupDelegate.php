@@ -27,7 +27,7 @@ class GroupDelegate extends AbstractDelegate
             
             foreach ($httpMethods as $httpMethod) {
                 if ($httpMethod instanceof GET) {
-                    $this->getApp()->get($httpMethod->pattern, new GroupActionDelegate($this->getApp(), $this->getInstantiator(), $methodMetadata));
+                    $this->getApp()->get($httpMethod->getPattern(), new GroupActionDelegate($this->getApp(), $this->getInstantiator(), $methodMetadata));
                 }
             }
         }

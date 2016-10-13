@@ -12,7 +12,7 @@ abstract class Action implements SlimAnnotation
     
     public function __construct(array $arguments = [])
     {
-        $this->pattern = strval($arguments["pattern"]);
+        $this->pattern = strval(@$arguments["pattern"]);
     }
     
     public function getPattern(): string

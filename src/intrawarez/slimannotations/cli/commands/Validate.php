@@ -1,18 +1,16 @@
 <?php
 namespace intrawarez\slimannotations\cli\commands;
 
-use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
-use intrawarez\slimannotations\parser\Parser;
 use Doctrine\Common\Annotations\AnnotationReader;
+use intrawarez\slimannotations\metadata\ClassMetadata;
 use intrawarez\slimannotations\metadata\MetadataFactory;
 use intrawarez\slimannotations\metadata\MetadataLoader;
-use intrawarez\slimannotations\Instantiator;
-use intrawarez\slimannotations\Mapper;
-use intrawarez\slimannotations\metadata\ClassMetadata;
-use Symfony\Component\Console\Formatter\OutputFormatterStyle;
 use intrawarez\slimannotations\metadata\MethodMetadata;
+use intrawarez\slimannotations\parser\Parser;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Formatter\OutputFormatterStyle;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 class Validate extends Command

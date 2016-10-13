@@ -22,10 +22,10 @@ final class Instantiator
             /**
              * @var PropertyMetadata $propertyMetadata
              */
-            if ($propertyMetadata->isDependency() && $this->container->has($propertyMetadata->getDependency()->id)) {
+            if ($propertyMetadata->isDependency() && $this->container->has($propertyMetadata->getDependency()->getId())) {
                 $reflectionProperty = $propertyMetadata->getReflectionProperty();
                 $reflectionProperty->setAccessible(true);
-                $reflectionProperty->setValue($instance, $this->container->get($propertyMetadata->getDependency()->id));
+                $reflectionProperty->setValue($instance, $this->container->get($propertyMetadata->getDependency()->getId()));
                 $reflectionProperty->setAccessible(false);
             }
         }

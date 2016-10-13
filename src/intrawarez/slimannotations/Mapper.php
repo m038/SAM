@@ -20,11 +20,11 @@ class Mapper
     public function mapClass(ClassMetadata $classMetadata)
     {
         if ($classMetadata->isGroupDeclaration()) {
-            $this->app->group($classMetadata->getGroupDeclaration()->pattern, new GroupDelegate($this->app, $this->instantiator, $classMetadata));
+            $this->app->group($classMetadata->getGroupDeclaration()->getPattern(), new GroupDelegate($this->app, $this->instantiator, $classMetadata));
         } elseif ($classMetadata->isActionDeclaration()) {
             $httpMethod = $classMetadata->getActionDeclaration();
             if ($httpMethod instanceof GET) {
-                $this->getApp()->get($httpMethod->pattern, new ActionDelegate($this->app, $this->instantiator, $classMetadata));
+                $this->getApp()->get($httpMethod->getPattern(), new ActionDelegate($this->app, $this->instantiator, $classMetadata));
             }
         }
     }
