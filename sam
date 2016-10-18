@@ -26,4 +26,4 @@ if (is_null($autoload)) {
 
 include_once $autoload;
 
-return (new \intrawarez\slimannotations\cli\SlamConsole())->run();
+return (new \intrawarez\sam\cli\SAMConsole())->run();
