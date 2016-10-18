@@ -5,7 +5,7 @@ use Symfony\Component\Console\Application;
 use intrawarez\sam\cli\commands\Validate;
 use intrawarez\sam\cli\commands\Compile;
 
-final class samConsole extends Application
+final class SAMConsole extends Application
 {
     public function __construct()
     {
