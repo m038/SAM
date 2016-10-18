@@ -1,10 +1,10 @@
-[![Build Status](https://travis-ci.org/IntraWarez/slim-annotations.svg?branch=master)](https://travis-ci.org/IntraWarez/slim-annotations)
-[![Coverage Status](https://coveralls.io/repos/github/IntraWarez/slim-annotations/badge.svg?branch=master)](https://coveralls.io/github/IntraWarez/slim-annotations?branch=master)
-[![Latest Stable Version](https://poser.pugx.org/intrawarez/slim-annotations/v/stable)](https://packagist.org/packages/intrawarez/slim-annotations)
-[![License](https://poser.pugx.org/intrawarez/slim-annotations/license)](https://packagist.org/packages/intrawarez/slim-annotations)
+[![Build Status](https://travis-ci.org/IntraWarez/SAM.svg?branch=master)](https://travis-ci.org/IntraWarez/SAM)
+[![Coverage Status](https://coveralls.io/repos/github/IntraWarez/SAM/badge.svg?branch=master)](https://coveralls.io/github/IntraWarez/SAM?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/intrawarez/SAM/v/stable)](https://packagist.org/packages/intrawarez/SAM)
+[![License](https://poser.pugx.org/intrawarez/SAM/license)](https://packagist.org/packages/intrawarez/SAM)
 
 
-# [slam](https://intrawarez.github.io/slim-annotations/) - Slim Annotation Mapping
+# [SAM](https://intrawarez.github.io/SAM/) - Slim Annotation Mapping
 Annotation driven mapping for [Slim](http://www.slimframework.com/).
 
 ## Features
