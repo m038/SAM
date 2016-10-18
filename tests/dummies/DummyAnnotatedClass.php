@@ -1,12 +1,12 @@
 <?php
-namespace intrawarez\slam\tests;
+namespace intrawarez\sam\tests;
 
-use intrawarez\slam\annotations\Group;
-use intrawarez\slam\annotations\Middleware;
-use intrawarez\slam\annotations\Dependency;
-use intrawarez\slam\annotations\Action;
-use intrawarez\slam\annotations\GET;
-use intrawarez\slam\annotations\Annotations;
+use intrawarez\sam\annotations\Group;
+use intrawarez\sam\annotations\Middleware;
+use intrawarez\sam\annotations\Dependency;
+use intrawarez\sam\annotations\Action;
+use intrawarez\sam\annotations\GET;
+use intrawarez\sam\annotations\Annotations;
 
 /**
  * @Group(pattern="/dummy")

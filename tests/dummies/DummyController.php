@@ -1,11 +1,11 @@
 <?php
-namespace intrawarez\slam\tests;
+namespace intrawarez\sam\tests;
 
-use intrawarez\slam\annotations\Group;
-use intrawarez\slam\annotations\GET;
-use intrawarez\slam\annotations\POST;
-use intrawarez\slam\annotations\PUT;
-use intrawarez\slam\annotations\DELETE;
+use intrawarez\sam\annotations\Group;
+use intrawarez\sam\annotations\GET;
+use intrawarez\sam\annotations\POST;
+use intrawarez\sam\annotations\PUT;
+use intrawarez\sam\annotations\DELETE;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 

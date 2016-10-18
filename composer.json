@@ -1,7 +1,7 @@
 {
-    "name": "intrawarez/slam",
+    "name": "intrawarez/sam",
     "description": "Slim Annotation Mapping",
-    "homepage": "https://intrawarez.github.io/slam/",
+    "homepage": "https://intrawarez.github.io/sam/",
     "authors": [
         {
             "name": "Maximilian Meffert",
@@ -9,7 +9,7 @@
         }
     ],
     "bin": [
-    	"slam"
+    	"sam"
     ],
     "license": "MIT",
     "autoload": {
@@ -20,18 +20,18 @@
         	]
         },
         "files": [
-        	"src/intrawarez/slam/annotations/SlimAnnotation.php",
-        	"src/intrawarez/slam/annotations/Dependency.php",
-        	"src/intrawarez/slam/annotations/Group.php",
-        	"src/intrawarez/slam/annotations/Middleware.php",
-        	"src/intrawarez/slam/annotations/Action.php",
-        	"src/intrawarez/slam/annotations/GET.php",
-        	"src/intrawarez/slam/annotations/POST.php",
-        	"src/intrawarez/slam/annotations/PUT.php",
-        	"src/intrawarez/slam/annotations/DELETE.php",
-        	"src/intrawarez/slam/annotations/OPTIONS.php",
-        	"src/intrawarez/slam/annotations/PATCH.php",
-        	"src/intrawarez/slam/annotations/ANY.php"
+        	"src/intrawarez/sam/annotations/SlimAnnotation.php",
+        	"src/intrawarez/sam/annotations/Dependency.php",
+        	"src/intrawarez/sam/annotations/Group.php",
+        	"src/intrawarez/sam/annotations/Middleware.php",
+        	"src/intrawarez/sam/annotations/Action.php",
+        	"src/intrawarez/sam/annotations/GET.php",
+        	"src/intrawarez/sam/annotations/POST.php",
+        	"src/intrawarez/sam/annotations/PUT.php",
+        	"src/intrawarez/sam/annotations/DELETE.php",
+        	"src/intrawarez/sam/annotations/OPTIONS.php",
+        	"src/intrawarez/sam/annotations/PATCH.php",
+        	"src/intrawarez/sam/annotations/ANY.php"
         ]
     },
     "minimum-stability": "dev",

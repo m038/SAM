@@ -1,5 +1,5 @@
 <?php
-namespace intrawarez\slam\tests;
+namespace intrawarez\sam\tests;
 
 use PHPUnit\Framework\TestCase;
 

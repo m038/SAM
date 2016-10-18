@@ -4,6 +4,7 @@
 
 vendor
 cache
+misc
 
 composer.phar
 composer.lock
