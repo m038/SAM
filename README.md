@@ -4,7 +4,7 @@
 [![License](https://poser.pugx.org/intrawarez/slim-annotations/license)](https://packagist.org/packages/intrawarez/slim-annotations)
 
 
-# [slam](https://intrawarez.github.io/slim-annotations/) - Slim Annotation Mapping
+# [SAM](https://intrawarez.github.io/SAM/) - Slim Annotation Mapping
 Annotation driven mapping for [Slim](http://www.slimframework.com/).
 
 ## Features
