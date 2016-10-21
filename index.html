@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>slim-annotations by IntraWarez</title>
+    <title>SAM by IntraWarez</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -11,24 +11,23 @@
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">slim-annotations</h1>
-      <h2 class="project-tagline">Annotations for the Slim framework</h2>
-      <a href="https://github.com/IntraWarez/slim-annotations" class="btn">View on GitHub</a>
-      <a href="https://github.com/IntraWarez/slim-annotations/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/IntraWarez/slim-annotations/tarball/master" class="btn">Download .tar.gz</a>
+      <h1 class="project-name">SAM</h1>
+      <h2 class="project-tagline">Slim Annotation Mapping</h2>
+      <a href="https://github.com/IntraWarez/SAM" class="btn">View on GitHub</a>
+      <a href="https://github.com/IntraWarez/SAM/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/IntraWarez/SAM/tarball/master" class="btn">Download .tar.gz</a>
     </section>
 
     <section class="main-content">
-      <p><a href="https://travis-ci.org/IntraWarez/slim-annotations"><img src="https://travis-ci.org/IntraWarez/slim-annotations.svg?branch=master" alt="Build Status"></a>
-<a href="https://coveralls.io/github/IntraWarez/slim-annotations?branch=master"><img src="https://coveralls.io/repos/github/IntraWarez/slim-annotations/badge.svg?branch=master" alt="Coverage Status"></a>
-<a href="https://packagist.org/packages/intrawarez/slim-annotations"><img src="https://poser.pugx.org/intrawarez/slim-annotations/v/stable" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/intrawarez/slim-annotations"><img src="https://poser.pugx.org/intrawarez/slim-annotations/license" alt="License"></a></p>
+      <p><a href="https://travis-ci.org/IntraWarez/SAM"><img src="https://travis-ci.org/IntraWarez/SAM.svg?branch=master" alt="Build Status"></a>
+<a href="https://coveralls.io/github/IntraWarez/SAM?branch=master"><img src="https://coveralls.io/repos/github/IntraWarez/SAM/badge.svg?branch=master" alt="Coverage Status"></a>
+<a href="https://packagist.org/packages/intrawarez/SAM"><img src="https://poser.pugx.org/intrawarez/SAM/v/stable" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/intrawarez/SAM"><img src="https://poser.pugx.org/intrawarez/SAM/license" alt="License"></a></p>
 
 <h1>
-<a id="slim-annotations" class="anchor" href="#slim-annotations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://intrawarez.github.io/slim-annotations/">slim-annotations</a>
-</h1>
+<a id="sam---slim-annotation-mapping" class="anchor" href="#sam---slim-annotation-mapping" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://intrawarez.github.io/SAM/">SAM</a> - Slim Annotation Mapping</h1>
 
-<p>Annotations for <a href="http://www.slimframework.com/">Slim</a>.</p>
+<p>Annotation driven mapping for <a href="http://www.slimframework.com/">Slim</a>.</p>
 
 <h2>
 <a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
@@ -36,20 +35,22 @@
 <p>Annotation markup currently supports:</p>
 
 <ul>
-<li>automated <code>App::group</code>-mapping for classes and methods</li>
-<li>automated Dependency Injection for properties</li>
+<li>Group-Mapping for classes using <code>@Group</code> </li>
+<li>Action-Mapping for classes or methods using <code>@GET</code>, <code>@POST</code>, <code>@PUT</code>, etc. </li>
+<li>Middleware-Mapping for classes or methods using <code>@Middleware</code> </li>
+<li>Dependency-Mapping for properties using <code>@Dependency</code> (facilitates automated dependency injection of container elements as class properties)</li>
 </ul>
 
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
 
-<pre><code>composer require intrawarez/slim-annotations
+<pre><code>composer require intrawarez/slam
 </code></pre>
 
 <h2>
 <a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation</h2>
 
-<p>Documentation can be found <a href="http://intrawarez.github.io/slim-annotations/docs/">here</a>.</p>
+<p>Documentation can be found <a href="http://intrawarez.github.io/SAM/docs/">here</a>.</p>
 
 <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
@@ -77,7 +78,7 @@
 <h4>
 <a id="indexphp" class="anchor" href="#indexphp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>index.php</h4>
 
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">intrawarez\slimannotations\App</span>;</span>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">intrawarez\slam\App</span>;</span>
 <span class="pl-s1"></span>
 <span class="pl-s1"><span class="pl-smi">$settings</span> <span class="pl-k">=</span> <span class="pl-k">require</span> <span class="pl-c1">__DIR__</span> <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">"</span>/path/to/settings.php<span class="pl-pds">"</span></span>;</span>
 <span class="pl-s1"></span>
@@ -88,55 +89,95 @@
 <span class="pl-s1"><span class="pl-smi">$app</span><span class="pl-k">-&gt;</span>run();</span></pre></div>
 
 <h3>
-<a id="groups" class="anchor" href="#groups" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Groups</h3>
+<a id="group-mapping" class="anchor" href="#group-mapping" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Group-Mapping</h3>
 
-<h4>
-<a id="dependenciesphp" class="anchor" href="#dependenciesphp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>dependencies.php</h4>
-
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$container</span>[<span class="pl-s"><span class="pl-pds">"</span>twig<span class="pl-pds">"</span></span>] <span class="pl-k">=</span> <span class="pl-k">function</span> (<span class="pl-c1">Slim\</span><span class="pl-c1">Container</span> <span class="pl-smi">$c</span>) {</span>
-<span class="pl-s1"></span>
-<span class="pl-s1">    <span class="pl-smi">$settings</span> <span class="pl-k">=</span> <span class="pl-smi">$c</span><span class="pl-k">-&gt;</span>get(<span class="pl-s"><span class="pl-pds">"</span>settings<span class="pl-pds">"</span></span>);</span>
-<span class="pl-s1"></span>
-<span class="pl-s1">    <span class="pl-smi">$templatePath</span> <span class="pl-k">=</span> <span class="pl-smi">$settings</span>[<span class="pl-s"><span class="pl-pds">"</span>renderer<span class="pl-pds">"</span></span>][<span class="pl-s"><span class="pl-pds">"</span>template_path<span class="pl-pds">"</span></span>];</span>
-<span class="pl-s1"></span>
-<span class="pl-s1">    <span class="pl-smi">$loader</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Twig_Loader_Filesystem</span>(<span class="pl-smi">$templatePath</span>);</span>
-<span class="pl-s1"></span>
-<span class="pl-s1">    <span class="pl-smi">$twig</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Twig_Environment</span>(<span class="pl-smi">$loader</span>);</span>
-<span class="pl-s1">    <span class="pl-smi">$twig</span><span class="pl-k">-&gt;</span>addGlobal(<span class="pl-s"><span class="pl-pds">"</span>basePath<span class="pl-pds">"</span></span>, <span class="pl-c1">dirname</span>(<span class="pl-smi">$_SERVER</span>[<span class="pl-s"><span class="pl-pds">"</span>SCRIPT_NAME<span class="pl-pds">"</span></span>]));</span>
-<span class="pl-s1"></span>
-<span class="pl-s1">    <span class="pl-k">return</span> <span class="pl-smi">$twig</span>;</span>
-<span class="pl-s1"></span>
-<span class="pl-s1">};</span></pre></div>
-
-<h4>
-<a id="hellophp" class="anchor" href="#hellophp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Hello.php</h4>
+<p><strong>MyGroup.php</strong></p>
 
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Psr\Http\Message\ResponseInterface</span>;</span>
 <span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Psr\Http\Message\ServerRequestInterface</span>;</span>
 <span class="pl-s1"></span>
-<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">intrawarez\slimannotations\annotations\Group</span>;</span>
-<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">intrawarez\slimannotations\annotations\Dependency</span>;</span>
-<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">intrawarez\slimannotations\annotations\GET</span>;</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">intrawarez\slam\annotations</span> <span class="pl-k">as</span> <span class="pl-c1">SLAM</span>;</span>
 <span class="pl-s1"></span>
-<span class="pl-s1"><span class="pl-c">/** Group(pattern="/") */</span></span>
-<span class="pl-s1"><span class="pl-k">class</span> <span class="pl-en">Hello</span> {</span>
+<span class="pl-s1"><span class="pl-c">/** @SLAM\Group(pattern="/hello") */</span></span>
+<span class="pl-s1"><span class="pl-k">class</span> <span class="pl-en">MyGroup</span> {</span>
 <span class="pl-s1"></span>
-<span class="pl-s1">    <span class="pl-c">/** @Dependency(id="twig") */</span></span>
-<span class="pl-s1">    <span class="pl-k">private</span> <span class="pl-smi">$twig</span>;</span>
-<span class="pl-s1"></span>
-<span class="pl-s1">    <span class="pl-c">/** @GET */</span>   </span>
-<span class="pl-s1">    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">foo</span> (<span class="pl-c1">ServerRequestInterface</span> <span class="pl-smi">$req</span>, <span class="pl-c1">ResponseInterface</span> <span class="pl-smi">$res</span>, <span class="pl-k">array</span> <span class="pl-smi">$args</span>) {</span>
-<span class="pl-s1"></span>
-<span class="pl-s1">        <span class="pl-smi">$res</span><span class="pl-k">-&gt;</span>getBody()<span class="pl-k">-&gt;</span>write(<span class="pl-smi">$this</span><span class="pl-k">-&gt;</span><span class="pl-smi">twig</span><span class="pl-k">-&gt;</span>render(<span class="pl-s"><span class="pl-pds">"</span>index.twig<span class="pl-pds">"</span></span>,[</span>
-<span class="pl-s1">            <span class="pl-s"><span class="pl-pds">"</span>hello<span class="pl-pds">"</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">"</span>World<span class="pl-pds">"</span></span></span>
-<span class="pl-s1">        ]));</span>
-<span class="pl-s1"></span>
-<span class="pl-s1">        <span class="pl-k">return</span> <span class="pl-smi">$res</span>;</span>
-<span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-c">/** @SLAM\GET */</span>   </span>
+<span class="pl-s1">    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">doFoo</span> (<span class="pl-c1">ServerRequestInterface</span> <span class="pl-smi">$req</span>, <span class="pl-c1">ResponseInterface</span> <span class="pl-smi">$res</span>, <span class="pl-k">array</span> <span class="pl-smi">$args</span>) {</span>
+<span class="pl-s1">        <span class="pl-k">...</span></span>
 <span class="pl-s1">    }</span>
 <span class="pl-s1"></span>
-<span class="pl-s1">}</span>
-<span class="pl-s1"></span></pre></div>
+<span class="pl-s1">    <span class="pl-c">/** @SLAM\POST(pattern="/bar") */</span>   </span>
+<span class="pl-s1">    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">doBar</span> (<span class="pl-c1">ServerRequestInterface</span> <span class="pl-smi">$req</span>, <span class="pl-c1">ResponseInterface</span> <span class="pl-smi">$res</span>, <span class="pl-k">array</span> <span class="pl-smi">$args</span>) {</span>
+<span class="pl-s1">        <span class="pl-k">...</span></span>
+<span class="pl-s1">    }</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">}</span></pre></div>
+
+<h3>
+<a id="action-mapping" class="anchor" href="#action-mapping" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Action-Mapping</h3>
+
+<p><strong>MyAction.php</strong></p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Psr\Http\Message\ResponseInterface</span>;</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Psr\Http\Message\ServerRequestInterface</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">intrawarez\slam\annotations</span> <span class="pl-k">as</span> <span class="pl-c1">SLAM</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">/** @SLAM\GET(pattern="/hello") */</span></span>
+<span class="pl-s1"><span class="pl-k">class</span> <span class="pl-en">MyAction</span> {</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-c1">__invoke</span> (<span class="pl-c1">ServerRequestInterface</span> <span class="pl-smi">$req</span>, <span class="pl-c1">ResponseInterface</span> <span class="pl-smi">$res</span>, <span class="pl-k">array</span> <span class="pl-smi">$args</span>) {</span>
+<span class="pl-s1">        <span class="pl-k">...</span></span>
+<span class="pl-s1">    }</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">}</span></pre></div>
+
+<h3>
+<a id="middleware-mapping" class="anchor" href="#middleware-mapping" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Middleware-Mapping</h3>
+
+<p><strong>MyGroup.php</strong></p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Psr\Http\Message\ResponseInterface</span>;</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Psr\Http\Message\ServerRequestInterface</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">intrawarez\slam\annotations</span> <span class="pl-k">as</span> <span class="pl-c1">SLAM</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">/** @SLAM\Group(pattern="/hello")</span></span>
+<span class="pl-s1"><span class="pl-c"> *  @SLAM\Middleware(class="\\namespace\\of\\MyMiddlwareClass")</span></span>
+<span class="pl-s1"><span class="pl-c"> */</span></span>
+<span class="pl-s1"><span class="pl-k">class</span> <span class="pl-en">MyGroup</span> {</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">/** @SLAM\GET </span></span>
+<span class="pl-s1"><span class="pl-c"> *  @SLAM\Middleware(callback="\\namespace\\of\\MyMiddlwareCallback")</span></span>
+<span class="pl-s1"><span class="pl-c"> */</span>   </span>
+<span class="pl-s1">    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">doFoo</span> (<span class="pl-c1">ServerRequestInterface</span> <span class="pl-smi">$req</span>, <span class="pl-c1">ResponseInterface</span> <span class="pl-smi">$res</span>, <span class="pl-k">array</span> <span class="pl-smi">$args</span>) {</span>
+<span class="pl-s1">        <span class="pl-k">...</span></span>
+<span class="pl-s1">    }</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">}</span></pre></div>
+
+<h3>
+<a id="dependency-mapping" class="anchor" href="#dependency-mapping" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dependency-Mapping</h3>
+
+<p><strong>dependencies.php</strong></p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$container</span>[<span class="pl-s"><span class="pl-pds">"</span>MyDependency<span class="pl-pds">"</span></span>] <span class="pl-k">=</span> <span class="pl-k">function</span> (<span class="pl-c1">Slim\</span><span class="pl-c1">Container</span> <span class="pl-smi">$c</span>) {</span>
+<span class="pl-s1">    <span class="pl-k">...</span></span>
+<span class="pl-s1">};</span></pre></div>
+
+<p><strong>MyController.php</strong></p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Psr\Http\Message\ResponseInterface</span>;</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Psr\Http\Message\ServerRequestInterface</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">intrawarez\slam\annotations</span> <span class="pl-k">as</span> <span class="pl-c1">SLAM</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">class</span> <span class="pl-en">MyController</span> {</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-c">/** @SLAM\Dependency(id="MyDependency") */</span></span>
+<span class="pl-s1">    <span class="pl-k">private</span> <span class="pl-smi">$myDependency</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">}</span></pre></div>
 
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
@@ -154,7 +195,7 @@
 <p><a href="https://opensource.org/licenses/MIT">https://opensource.org/licenses/MIT</a></p>
 
       <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/IntraWarez/slim-annotations">slim-annotations</a> is maintained by <a href="https://github.com/IntraWarez">IntraWarez</a>.</span>
+        <span class="site-footer-owner"><a href="https://github.com/IntraWarez/SAM">SAM</a> is maintained by <a href="https://github.com/IntraWarez">IntraWarez</a>.</span>
 
         <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
