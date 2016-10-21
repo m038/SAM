@@ -23,7 +23,7 @@ composer require intrawarez/slam
 
 ## Documentation
 
-Documentation can be found [here](http://intrawarez.github.io/slim-annotations/docs/).
+Documentation can be found [here](http://intrawarez.github.io/SAM/docs/).
 
 ## Usage
 
