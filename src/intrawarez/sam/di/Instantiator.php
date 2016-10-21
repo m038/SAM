@@ -31,5 +31,5 @@ final class Instantiator
         }
         
         return $instance;
-    }
+    }    
 }
