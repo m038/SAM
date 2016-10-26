@@ -68,32 +68,14 @@ class DelegateMapper implements DelegateMapperInterface
         }
     }
     
-<<<<<<< HEAD
-<<<<<<< HEAD
-    public function group(Group $group, DelegateInterface $callable): Routable {
-=======
     public function group(Group $group, DelegateInterface $callable): Routable
     {
->>>>>>> 77690e8104c4d1850bada6375323f7d89848d8db
-=======
-    public function group(Group $group, DelegateInterface $callable): Routable
-    {
->>>>>>> 77690e8104c4d1850bada6375323f7d89848d8db
         $pattern = $group->getPattern();
         return $this->app->group($pattern, $callable);
     }
     
-<<<<<<< HEAD
-<<<<<<< HEAD
-    public function action(Action $action, DelegateInterface $callable): Routable {
-=======
     public function action(Action $action, DelegateInterface $callable): Routable
     {
->>>>>>> 77690e8104c4d1850bada6375323f7d89848d8db
-=======
-    public function action(Action $action, DelegateInterface $callable): Routable
-    {
->>>>>>> 77690e8104c4d1850bada6375323f7d89848d8db
         $pattern = $action->getPattern();
         
         if ($action instanceof GET) {
