@@ -5,7 +5,6 @@ use Doctrine\Common\Annotations\Reader;
 use intrawarez\sam\annotations\Group;
 use intrawarez\sam\annotations\Action;
 use intrawarez\sam\annotations\Middleware;
-use intrawarez\sam\annotations\Middlewares;
 use function intrawarez\sabertooth\fn\predicates\_instanceOf;
 use function intrawarez\sabertooth\fn\repeatables\filter;
 use function intrawarez\sabertooth\fn\repeatables\first;
@@ -13,6 +12,28 @@ use intrawarez\sabertooth\optionals\OptionalInterface;
 
 final class ClassMetadata extends AbstractMetadata
 {
+    private static function getMethods(\ReflectionClass $class, $filter = null): array
+    {
+        $methods = $class->getMethods($filter);
+        
+        while ($class = $class->getParentClass()) {
+            $methods = array_merge($methods, $class->getMethods());
+        }
+        
+        return $methods;
+    }
+    
+    private static function getProperties(\ReflectionClass $class): array
+    {
+        $properties = $class->getProperties();
+        
+        while ($class = $class->getParentClass()) {
+            $properties = array_merge($properties, $class->getProperties());
+        }
+        
+        return $properties;
+    }
+    
     /**
      * @var \ReflectionClass
      */
@@ -62,14 +83,14 @@ final class ClassMetadata extends AbstractMetadata
         $this->methodDeclarationOptional = first(filter($this->getAnnotations(), _instanceOf(Action::class)));
         $this->middlewareDeclarations = filter($this->getAnnotations(), _instanceOf(Middleware::class));
         
-        foreach ($reflectionClass->getMethods(\ReflectionMethod::IS_PUBLIC) as $reflectionMethod) {
+        foreach (self::getMethods($this->reflectionClass, \ReflectionMethod::IS_PUBLIC) as $reflectionMethod) {
             $methodMetadata = new MethodMetadata($this, $reflectionMethod, $reader);
             if ($methodMetadata->isAnnotated()) {
                 $this->methodMetadata[] = $methodMetadata;
             }
         }
         
-        foreach ($reflectionClass->getProperties() as $reflectionProperty) {
+        foreach (self::getProperties($this->reflectionClass) as $reflectionProperty) {
             $propertyMetadata = new PropertyMetadata($this, $reflectionProperty, $reader);
             if ($propertyMetadata->isAnnotated()) {
                 $this->propertyMetadata[] = $propertyMetadata;
