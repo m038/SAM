@@ -14,13 +14,7 @@ final class ClassMetadata extends AbstractMetadata
 {
     private static function getMethods(\ReflectionClass $class, $filter = null): array
     {
-        $methods = $class->getMethods($filter);
-        
-        while ($class = $class->getParentClass()) {
-            $methods = array_merge($methods, $class->getMethods());
-        }
-        
-        return $methods;
+        return $class->getMethods($filter);
     }
     
     private static function getProperties(\ReflectionClass $class): array
